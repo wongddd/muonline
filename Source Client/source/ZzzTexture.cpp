@@ -238,6 +238,14 @@ void DeleteBitmap(GLuint uiTextureIndex, bool bForce)
 }
 void PopUpErrorCheckMsgBox(const char* szErrorMsg, bool bForceDestroy)
 {
+	// In auto-test mode, skip blocking message boxes for missing resources
+	extern bool g_bAutoTest;
+	if (g_bAutoTest)
+	{
+		g_ErrorReport.Write("[AutoTest] Skipped error: %s\r\n", szErrorMsg);
+		return;
+	}
+
 	char szMsg[1024] = {0, };
 	strcpy(szMsg, szErrorMsg);
 

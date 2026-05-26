@@ -403,12 +403,20 @@ bool CGlobalBitmap::LoadImage(GLuint uiBitmapIndex, const std::string& filename,
 	
 	std::string ext;
 	SplitExt(filename, ext, false);
-	
+
 	if(0 == _stricmp(ext.c_str(), "jpg"))
-		return OpenJpeg(uiBitmapIndex, filename, uiFilter, uiWrapMode);
+	{
+		if (OpenJpeg(uiBitmapIndex, filename, uiFilter, uiWrapMode))
+			return true;
+		return CreateFallbackTexture(uiBitmapIndex, filename);
+	}
 	else if(0 == _stricmp(ext.c_str(), "tga"))
-		return OpenTga(uiBitmapIndex, filename, uiFilter, uiWrapMode);
-	
+	{
+		if (OpenTga(uiBitmapIndex, filename, uiFilter, uiWrapMode))
+			return true;
+		return CreateFallbackTexture(uiBitmapIndex, filename);
+	}
+
 	return false;
 }
 void CGlobalBitmap::UnloadImage(GLuint uiBitmapIndex, bool bForce)
@@ -863,4 +871,52 @@ void CGlobalBitmap::my_error_exit(j_common_ptr cinfo)
 	my_error_ptr myerr = (my_error_ptr) cinfo->err;
 	(*cinfo->err->output_message) (cinfo);
 	longjmp(myerr->setjmp_buffer, 1);
+}
+
+bool CGlobalBitmap::CreateFallbackTexture(GLuint uiBitmapIndex, const std::string& filename)
+{
+	g_ErrorReport.Write("[Fallback] Texture not found: %s - using placeholder\r\n", filename.c_str());
+
+	int Width = 4, Height = 4;
+	BYTE checker[4 * 4 * 3];
+	for (int y = 0; y < Height; y++)
+	{
+		for (int x = 0; x < Width; x++)
+		{
+			int idx = (y * Width + x) * 3;
+			bool isMagenta = ((x + y) % 2) == 0;
+			if (isMagenta)
+			{
+				checker[idx] = 255; checker[idx + 1] = 0; checker[idx + 2] = 255;
+			}
+			else
+			{
+				checker[idx] = 0; checker[idx + 1] = 0; checker[idx + 2] = 0;
+			}
+		}
+	}
+
+	BITMAP_t* pNewBitmap = new BITMAP_t;
+	memset(pNewBitmap, 0, sizeof(BITMAP_t));
+	pNewBitmap->BitmapIndex = uiBitmapIndex;
+	strncpy_s(pNewBitmap->FileName, MAX_BITMAP_FILE_NAME, filename.c_str(), _TRUNCATE);
+	pNewBitmap->Width = (float)Width;
+	pNewBitmap->Height = (float)Height;
+	pNewBitmap->Components = 3;
+	pNewBitmap->Ref = 1;
+	pNewBitmap->Buffer = new BYTE[Width * Height * 3];
+	memcpy(pNewBitmap->Buffer, checker, Width * Height * 3);
+	m_dwUsedTextureMemory += Width * Height * 3;
+
+	m_mapBitmap.insert(type_bitmap_map::value_type(uiBitmapIndex, pNewBitmap));
+
+	glGenTextures(1, &(pNewBitmap->TextureNumber));
+	glBindTexture(GL_TEXTURE_2D, pNewBitmap->TextureNumber);
+	glTexImage2D(GL_TEXTURE_2D, 0, 3, Width, Height, 0, GL_RGB, GL_UNSIGNED_BYTE, pNewBitmap->Buffer);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	return true;
 }

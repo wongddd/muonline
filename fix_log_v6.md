@@ -8,6 +8,7 @@
 | 2 | `SendRequestFinishLoading` 未走现代协议 | ✅ 已修复 | 1 文件 |
 | 3 | 函数声明与实现签名不匹配 | ✅ 已修复 | 1 文件 |
 | 4 | 断行字符串字面量编译错误 | ✅ 已修复 | 1 文件 |
+| 5 | `MoveMainScene` 每帧日志刷屏 + 初始加入未发送 `SendRequestFinishLoading` | ✅ 已修复 | 1 文件 |
 
 ---
 
@@ -121,13 +122,50 @@ g_ErrorReport.Write("[MoveMainScene] step1: after SendJoin\n");
 
 ---
 
+### 5. MoveMainScene 日志刷屏与初始加入协议修复
+
+**症状**:
+- `[MoveMainScene] InitMainScene=1, Name=Wandering Merchant` 每帧输出数百次，日志被刷屏
+- 连接在进入游戏后约 30 秒被服务端关闭
+
+**根因**:
+1. `g_ErrorReport.Write` 放在 `MoveMainScene()` 函数顶部，每次调用都输出，而 `CharactersClient[0]` 在进入游戏后被 NPC 数据覆盖
+2. `SendRequestFinishLoading()` 只在 `InitGame()` 函数末尾调用，但 `InitGame()` 仅在换地图/重连时执行，初始加入流程从未走到该路径
+
+**修复**:
+```cpp
+// ZzzScene.cpp — 将日志移到 InitMainScene 初始块内部
+void MoveMainScene()
+{
+    if(!InitMainScene)
+    {
+        g_ErrorReport.Write("[MoveMainScene] InitMainScene=%d, SelectedHero=%d, Name=%s\n", ...);
+        // ... init ...
+        InitMainScene = true;
+    }
+
+    if(CurrentProtocolState == RECEIVE_JOIN_MAP_SERVER)
+    {
+        EnableMainRender = true;
+        SendRequestFinishLoading();  // 通知服务端加载完成
+    }
+    // ...
+}
+```
+
+**效果**:
+- 日志仅打印一次（初始时），不再刷屏
+- `SendRequestFinishLoading()` 在服务端回包后立即发送，避免服务端超时断开
+
+---
+
 ## 修改文件清单
 
 | 文件 | 操作 | 说明 |
 |------|------|------|
 | `Source Client/source/ZzzInterface.h` | 修改 | `SelectCharacter` 声明添加 `BYTE Kind` 参数 |
 | `Source Client/source/ZzzInterface.cpp` | 修改 | `m_bIsSelected` 检查添加 `&& Main` 条件 |
-| `Source Client/source/ZzzScene.cpp` | 修改 | 角色场景添加 3D 点击选角色 + 修复断行字符串 |
+| `Source Client/source/ZzzScene.cpp` | 修改 | 角色场景添加 3D 点击选角色 + 修复断行字符串 + 修复日志刷屏 + 初始加入调用 `SendRequestFinishLoading` |
 | `Source Client/source/wsclientinline.h` | 修改 | `SendRequestFinishLoading` 宏新协议路径 |
 
 ---
@@ -151,5 +189,5 @@ msbuild "Source Client\Main.sln" /p:Configuration="Global Release";Platform=x86 
 | v3 | 编码 + Shader + Custom UI | 15 |
 | v4 | CustomBuyVip UI | 11 |
 | v5 | 自动化测试登录 | 4 |
-| **v6** | **角色选取 + 协议适配** | **4** |
+| **v6** | **角色选取 + 协议适配 + Loading 修复** | **4** |
 | **合计** | | **34** |

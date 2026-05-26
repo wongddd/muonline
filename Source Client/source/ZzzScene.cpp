@@ -1891,10 +1891,10 @@ bool MoveMainCamera()
 
 void MoveMainScene()
 {
-	g_ErrorReport.Write("[MoveMainScene] InitMainScene=%d, SelectedHero=%d, Name=%s\n", InitMainScene, SelectedHero, CharactersClient[SelectedHero].ID);
 		if(!InitMainScene)
 	{
 		extern bool g_bAutoTest;
+		g_ErrorReport.Write("[MoveMainScene] InitMainScene=%d, SelectedHero=%d, Name=%s\n", InitMainScene, SelectedHero, CharactersClient[SelectedHero].ID);
 		if (g_bAutoTest) g_ErrorReport.Write("[MoveMainScene] InitMainScene=%d\n", InitMainScene);
 
 		g_ConsoleDebug->Write( MCD_NORMAL, "Join the game with the following character: %s", CharactersClient[SelectedHero].ID);
@@ -1965,6 +1965,7 @@ void MoveMainScene()
 	if(CurrentProtocolState == RECEIVE_JOIN_MAP_SERVER)
 	{
 		EnableMainRender = true;
+		SendRequestFinishLoading();
 	}
 	if(EnableMainRender == false)
 	{

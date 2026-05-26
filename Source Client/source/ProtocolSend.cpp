@@ -360,6 +360,11 @@ void CProtocolSend::RecvLoginNew(PMSG_SIMPLE_RESULT_RECV* pMsg)
 			CurrentProtocolState = RECEIVE_LOG_IN_SUCCESS;
 			LogIn = 2;
 			CheckHack();
+			if (g_bAutoTest)
+			{
+				g_ConsoleDebug->Write(MCD_NORMAL, "[AutoTest] Login success, requesting character list");
+				gProtocolSend.SendRequestCharactersListNew();
+			}
 			break;
 		case 0x00:
 			CUIMng::Instance().PopUpMsgWin(RECEIVE_LOG_IN_FAIL_PASSWORD);
@@ -368,6 +373,11 @@ void CProtocolSend::RecvLoginNew(PMSG_SIMPLE_RESULT_RECV* pMsg)
 			CurrentProtocolState = RECEIVE_LOG_IN_SUCCESS;
 			LogIn = 2;
 			CheckHack();
+			if (g_bAutoTest)
+			{
+				g_ConsoleDebug->Write(MCD_NORMAL, "[AutoTest] Login success, requesting character list");
+				gProtocolSend.SendRequestCharactersListNew();
+			}
 			break;
 		case 0x02:
 			CUIMng::Instance().PopUpMsgWin(RECEIVE_LOG_IN_FAIL_ID);

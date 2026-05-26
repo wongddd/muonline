@@ -1173,21 +1173,16 @@ bool NewRenderCharacterScene(HDC hDC)
 void CreateLogInScene()
 {
 	EnableMainRender = true;
-	g_ErrorReport.Write("[AutoTest] CreateLogInScene: start\r\n");
 #ifdef PJH_NEW_SERVER_SELECT_MAP
 	gMapManager.WorldActive = WD_73NEW_LOGIN_SCENE;
 #else
 	World = WD_77NEW_LOGIN_SCENE;
 #endif //PJH_NEW_SERVER_SELECT_MAP
-	g_ErrorReport.Write("[AutoTest] CreateLogInScene: LoadWorld enter\r\n");
 	gMapManager.LoadWorld(gMapManager.WorldActive);
-	g_ErrorReport.Write("[AutoTest] CreateLogInScene: LoadWorld done\r\n");
 
 	OpenLogoSceneData();
-	g_ErrorReport.Write("[AutoTest] CreateLogInScene: OpenLogoSceneData done\r\n");
 
 	CUIMng::Instance().CreateLoginScene();
-	g_ErrorReport.Write("[AutoTest] CreateLogInScene: CreateLoginScene done\r\n");
 
 	CurrentProtocolState = REQUEST_JOIN_SERVER;
     CreateSocket(szServerIpAddress,g_ServerPort);

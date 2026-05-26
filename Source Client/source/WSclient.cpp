@@ -564,32 +564,19 @@ void ReceiveCharacterList( BYTE *ReceiveBuffer )
 		Offset += sizeof(PRECEIVE_CHARACTER_LIST);
 	}
 	CurrentProtocolState = RECEIVE_CHARACTERS_LIST;
-	if (g_bAutoTest && Data->Value > 0)
-	{
-		int Offset2 = sizeof(PHEADER_DEFAULT_CHARACTER_LIST);
-		LPPRECEIVE_CHARACTER_LIST Data2 = (LPPRECEIVE_CHARACTER_LIST)(ReceiveBuffer + Offset2);
+		if (g_bAutoTest && Data->Value > 0)
+		{
+			int Offset2 = sizeof(PHEADER_DEFAULT_CHARACTER_LIST);
+			LPPRECEIVE_CHARACTER_LIST Data2 = (LPPRECEIVE_CHARACTER_LIST)(ReceiveBuffer + Offset2);
 
-		SelectedHero = Data2->Index;
+			SelectedHero = Data2->Index;
 
-		BYTE packet[14];
-		packet[0] = 0xC1;
-		packet[1] = sizeof(packet);
-		packet[2] = 0xF3;
-		packet[3] = 0x03;
-		memset(&packet[4], 0, MAX_ID_SIZE);
-		memcpy(&packet[4], Data2->ID, strlen((char*)Data2->ID));
+			g_ConsoleDebug->Write(MCD_NORMAL, "[AutoTest] Auto-selecting character: %s", (char*)Data2->ID);
+			g_ErrorReport.Write("[AutoTest] Auto-selecting character: %s
+", (char*)Data2->ID);
 
-		g_ConsoleDebug->Write(MCD_NORMAL, "[AutoTest] Auto-selecting character: %s", (char*)Data2->ID);
-		g_ErrorReport.Write("[AutoTest] Auto-selecting character: %s\r\n", (char*)Data2->ID);
-
-		CurrentProtocolState = REQUEST_JOIN_MAP_SERVER;
-
-#ifdef NEW_PROTOCOL_SYSTEM
-		gProtocolSend.SendPacketClassic(packet, sizeof(packet));
-#else
-		SendPacket((char*)packet, sizeof(packet), FALSE);
-#endif
-	}
+			::StartGame();
+		}
 }
 CHARACTER_ENABLE g_CharCardEnable;
 

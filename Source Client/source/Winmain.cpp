@@ -537,7 +537,7 @@ LONG FAR PASCAL WndProc(HWND hwnd,UINT msg,WPARAM wParam,LPARAM lParam)
 #ifdef ACTIVE_FOCUS_OUT
 			if (g_bUseWindowMode == FALSE)
 #endif	// ACTIVE_FOCUS_OUT
-				g_bWndActive = false;
+				//g_bWndActive = false;
 #if defined USER_WINDOW_MODE || (defined WINDOWMODE)
 			if (g_bUseWindowMode == TRUE)
 			{
@@ -1714,7 +1714,11 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 		g_ErrorReport.Write("> AUTO TEST MODE ENABLED\r\n");
 
 		CreateLogInScene();
-		g_bWndActive = false;
+		extern int SceneFlag;
+		extern bool InitLogIn;
+		SceneFlag = 2; // LOG_IN_SCENE
+		InitLogIn = true;
+		//g_bWndActive = false;
 	}
 
     while( 1 )

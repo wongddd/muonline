@@ -1,0 +1,4 @@
+20:35:32 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 3696)
+20:39:03 [CommandMoney][0000][魔法师] - (Money: 2147483647)
+20:45:21 [CommandChange][0000][魔法师] - (ChangeUp: 0)
+20:59:48 [CommandMoney][0000][魔剑士] - (Money: 2147483647)

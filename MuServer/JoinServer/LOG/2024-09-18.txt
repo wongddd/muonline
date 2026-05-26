@@ -1,0 +1,4 @@
+17:35:23 [SocketManager] Server started at port [55970]
+17:35:37 [SocketManager] Server started at port [55970]
+17:35:41 [ServerManager][0] AddServer (127.0.0.1)
+17:35:41 [ServerManager][0] ServerInfo (GameServer							;) (55901) (0)

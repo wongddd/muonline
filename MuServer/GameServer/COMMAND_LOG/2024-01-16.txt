@@ -1,0 +1,2 @@
+17:49:42 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 1)
+17:51:38 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 1)

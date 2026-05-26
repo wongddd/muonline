@@ -1,0 +1,101 @@
+00:01:01 [OnlineLoterry] No Winner
+00:05:00 [Invasion Manager] Index(0) Boss Position (Map: 3 X: 199 Y: 83)
+00:12:00 [KING OF MU] Start
+00:14:00 [KING OF MU] Finish - No Winner
+00:15:00 [Invasion Manager] Index(1) Boss Position (Map: 2 X: 70 Y: 40)
+00:48:00 [CustomQuiz] Start
+00:50:00 [Invasion Manager] Index(3) Boss Position (Map: 0 X: 159 Y: 54)
+00:51:00 [CustomQuiz] Finish
+01:01:01 [OnlineLoterry] No Winner
+01:48:00 [CustomQuiz] Start
+01:51:00 [CustomQuiz] Finish
+02:01:01 [OnlineLoterry] No Winner
+02:48:00 [CustomQuiz] Start
+02:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 158 Y: 20)
+02:51:00 [CustomQuiz] Finish
+03:01:01 [OnlineLoterry] No Winner
+03:48:00 [CustomQuiz] Start
+03:51:00 [CustomQuiz] Finish
+04:01:01 [OnlineLoterry] No Winner
+04:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 139 Y: 202)
+04:15:00 [Invasion Manager] Index(1) Boss Position (Map: 0 X: 56 Y: 30)
+04:48:00 [CustomQuiz] Start
+04:50:00 [Invasion Manager] Index(3) Boss Position (Map: 2 X: 166 Y: 21)
+04:51:00 [CustomQuiz] Finish
+05:01:01 [OnlineLoterry] No Winner
+05:48:00 [CustomQuiz] Start
+05:51:00 [CustomQuiz] Finish
+06:01:01 [OnlineLoterry] No Winner
+06:48:00 [CustomQuiz] Start
+06:50:00 [Invasion Manager] Index(7) Boss Position (Map: 3 X: 199 Y: 70)
+06:51:00 [CustomQuiz] Finish
+07:01:01 [OnlineLoterry] No Winner
+07:48:00 [CustomQuiz] Start
+07:51:00 [CustomQuiz] Finish
+08:01:01 [OnlineLoterry] No Winner
+08:05:00 [Invasion Manager] Index(0) Boss Position (Map: 3 X: 202 Y: 71)
+08:15:00 [Invasion Manager] Index(1) Boss Position (Map: 0 X: 147 Y: 209)
+08:48:00 [CustomQuiz] Start
+08:50:00 [Invasion Manager] Index(3) Boss Position (Map: 3 X: 194 Y: 82)
+08:51:00 [CustomQuiz] Finish
+09:01:01 [OnlineLoterry] No Winner
+09:48:00 [CustomQuiz] Start
+09:51:00 [CustomQuiz] Finish
+10:01:01 [OnlineLoterry] No Winner
+10:48:00 [CustomQuiz] Start
+10:50:00 [Invasion Manager] Index(7) Boss Position (Map: 0 X: 154 Y: 59)
+10:51:00 [CustomQuiz] Finish
+11:01:01 [OnlineLoterry] No Winner
+11:48:00 [CustomQuiz] Start
+11:51:00 [CustomQuiz] Finish
+12:01:01 [OnlineLoterry] No Winner
+12:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 132 Y: 192)
+12:15:00 [Invasion Manager] Index(1) Boss Position (Map: 2 X: 86 Y: 179)
+12:48:00 [CustomQuiz] Start
+12:50:00 [Invasion Manager] Index(3) Boss Position (Map: 2 X: 165 Y: 19)
+12:51:00 [CustomQuiz] Finish
+13:01:01 [OnlineLoterry] No Winner
+13:48:00 [CustomQuiz] Start
+13:51:00 [CustomQuiz] Finish
+14:01:01 [OnlineLoterry] No Winner
+14:05:00 [KING OF MU] Start
+14:07:00 [KING OF MU] Finish - No Winner
+14:48:00 [CustomQuiz] Start
+14:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 165 Y: 15)
+14:51:00 [CustomQuiz] Finish
+15:01:01 [OnlineLoterry] No Winner
+15:48:00 [CustomQuiz] Start
+15:51:00 [CustomQuiz] Finish
+16:01:01 [OnlineLoterry] No Winner
+16:05:00 [Invasion Manager] Index(0) Boss Position (Map: 3 X: 201 Y: 72)
+16:15:00 [Invasion Manager] Index(1) Boss Position (Map: 0 X: 111 Y: 219)
+16:48:00 [CustomQuiz] Start
+16:50:00 [Invasion Manager] Index(3) Boss Position (Map: 2 X: 165 Y: 22)
+16:51:00 [CustomQuiz] Finish
+17:01:01 [OnlineLoterry] No Winner
+17:48:00 [CustomQuiz] Start
+17:51:00 [CustomQuiz] Finish
+18:01:01 [OnlineLoterry] No Winner
+18:48:00 [CustomQuiz] Start
+18:50:00 [Invasion Manager] Index(7) Boss Position (Map: 0 X: 160 Y: 57)
+18:51:00 [CustomQuiz] Finish
+19:01:01 [OnlineLoterry] No Winner
+19:48:00 [CustomQuiz] Start
+19:51:00 [CustomQuiz] Finish
+20:01:01 [OnlineLoterry] No Winner
+20:05:00 [Invasion Manager] Index(0) Boss Position (Map: 3 X: 197 Y: 75)
+20:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 214 Y: 177)
+20:48:00 [CustomQuiz] Start
+20:50:00 [Invasion Manager] Index(3) Boss Position (Map: 3 X: 197 Y: 76)
+20:51:00 [CustomQuiz] Finish
+21:01:01 [OnlineLoterry] No Winner
+21:48:00 [CustomQuiz] Start
+21:51:00 [CustomQuiz] Finish
+22:01:01 [OnlineLoterry] No Winner
+22:05:00 [KING OF MU] Start
+22:07:00 [KING OF MU] Finish - No Winner
+22:48:00 [CustomQuiz] Start
+22:51:00 [CustomQuiz] Finish
+23:01:01 [OnlineLoterry] No Winner
+23:48:00 [CustomQuiz] Start
+23:51:00 [CustomQuiz] Finish

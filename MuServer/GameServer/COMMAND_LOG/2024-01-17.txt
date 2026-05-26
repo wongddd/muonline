@@ -1,0 +1,5 @@
+14:17:58 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 83)
+14:21:54 [CommandAddPoint][0000][魔法师] - (Type: 1, Amount: 180)
+14:27:19 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 180)
+14:31:19 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 85)
+14:36:41 [CommandAddPoint][0000][魔法师] - (Type: 0, Amount: 94)

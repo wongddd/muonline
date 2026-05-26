@@ -1,0 +1,1 @@
+21:50:37 [SocketManager] Protocol header error (Index: 1, Header: 3)

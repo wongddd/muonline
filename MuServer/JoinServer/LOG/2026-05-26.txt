@@ -1,0 +1,21 @@
+02:39:22 Could not connect to database
+03:09:12 [SocketManager] Server started at port [55970]
+03:09:20 [ServerManager][0] AddServer (127.0.0.1)
+03:09:20 [ServerManager][0] ServerInfo (GameServer							;) (55901) (0)
+03:14:39 [SocketManager] Server started at port [55970]
+03:14:46 [ServerManager][0] AddServer (127.0.0.1)
+03:14:46 [ServerManager][0] ServerInfo (GameServer							;) (55901) (0)
+03:30:04 [SocketManager] Server started at port [55970]
+03:30:13 [ServerManager][0] AddServer (127.0.0.1)
+03:30:13 [ServerManager][0] ServerInfo (GameServer							;) (55901) (0)
+03:33:02 [SocketManager] Server started at port [55970]
+03:33:03 [ServerManager][0] AddServer (127.0.0.1)
+03:33:03 [ServerManager][0] ServerInfo (GameServer							;) (55901) (0)
+03:33:41 [SocketManager] Server started at port [55970]
+03:33:43 [ServerManager][0] AddServer (127.0.0.1)
+03:33:43 [ServerManager][0] ServerInfo (GameServer							;) (55901) (0)
+03:34:02 [ServerManager][1] AddServer (127.0.0.1)
+03:34:02 [ServerManager][1] DelServer (127.0.0.1)
+16:15:09 [ServerManager][0] DelServer (127.0.0.1)
+16:15:14 [ServerManager][1] AddServer (127.0.0.1)
+16:15:14 [ServerManager][1] ServerInfo (GameServer							;) (55901) (0)

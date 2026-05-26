@@ -24,6 +24,16 @@ Release/
 *.tmp
 Client_original_tmp/
 
+# SQL Server database files
+*.mdf
+*.ldf
+
+# Visual Studio stuff
+.vs/
+*.ipch
+*.VC.db
+*.VC.VC.opendb
+
 # OS
 Thumbs.db
 .DS_Store

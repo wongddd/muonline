@@ -1,0 +1,293 @@
+02:39:43 [ServerInfo] CashShop loaded successfully
+02:39:43 [ServerInfo] ChaosMix loaded successfully
+02:39:43 [ServerInfo] Character loaded successfully
+02:39:43 [ServerInfo] Custom loaded successfully
+02:39:43 [ServerInfo] Command loaded successfully
+02:39:43 [ServerInfo] Common loaded successfully
+02:39:44 [ServerInfo] Event loaded successfully
+02:39:44 [ServerInfo] EventItemBag loaded successfully
+02:39:44 [ServerInfo] Hack loaded successfully
+02:39:44 [ServerInfo] Item loaded successfully
+02:39:44 [ServerInfo] Monster loaded successfully
+02:39:44 [ServerInfo] Move loaded successfully
+02:39:44 [ServerInfo] Quest loaded successfully
+02:39:44 [ServerInfo] Shop loaded successfully
+02:39:44 [ServerInfo] Skill loaded successfully
+02:39:44 [ServerInfo] Util loaded successfully
+02:39:44 [ReadBotInfo] BotSystem loaded successfully
+02:48:00 [CustomQuiz] Start
+02:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 164 Y: 13)
+02:51:00 [CustomQuiz] Finish
+03:09:19 [ServerInfo] CashShop loaded successfully
+03:09:19 [ServerInfo] ChaosMix loaded successfully
+03:09:19 [ServerInfo] Character loaded successfully
+03:09:19 [ServerInfo] Custom loaded successfully
+03:09:19 [ServerInfo] Command loaded successfully
+03:09:19 [ServerInfo] Common loaded successfully
+03:09:19 [ServerInfo] Event loaded successfully
+03:09:19 [ServerInfo] EventItemBag loaded successfully
+03:09:19 [ServerInfo] Hack loaded successfully
+03:09:19 [ServerInfo] Item loaded successfully
+03:09:19 [ServerInfo] Monster loaded successfully
+03:09:19 [ServerInfo] Move loaded successfully
+03:09:19 [ServerInfo] Quest loaded successfully
+03:09:19 [ServerInfo] Shop loaded successfully
+03:09:19 [ServerInfo] Skill loaded successfully
+03:09:19 [ServerInfo] Util loaded successfully
+03:09:19 [ReadBotInfo] BotSystem loaded successfully
+03:14:13 [Obj][9000] AddClient (197.159.75.59)
+03:14:13 [Obj][9000] DelClient (197.159.75.59)
+03:14:45 [ServerInfo] CashShop loaded successfully
+03:14:45 [ServerInfo] ChaosMix loaded successfully
+03:14:45 [ServerInfo] Character loaded successfully
+03:14:45 [ServerInfo] Custom loaded successfully
+03:14:46 [ServerInfo] Command loaded successfully
+03:14:46 [ServerInfo] Common loaded successfully
+03:14:46 [ServerInfo] Event loaded successfully
+03:14:46 [ServerInfo] EventItemBag loaded successfully
+03:14:46 [ServerInfo] Hack loaded successfully
+03:14:46 [ServerInfo] Item loaded successfully
+03:14:46 [ServerInfo] Monster loaded successfully
+03:14:46 [ServerInfo] Move loaded successfully
+03:14:46 [ServerInfo] Quest loaded successfully
+03:14:46 [ServerInfo] Shop loaded successfully
+03:14:46 [ServerInfo] Skill loaded successfully
+03:14:46 [ServerInfo] Util loaded successfully
+03:14:46 [ReadBotInfo] BotSystem loaded successfully
+03:15:16 [Obj][9000] AddClient (197.159.75.59)
+03:15:16 [Obj][9000] DelClient (197.159.75.59)
+03:27:37 [Obj][9000] AddClient (197.159.75.59)
+03:27:37 [Obj][9000] DelClient (197.159.75.59)
+03:30:13 Mu Debug Console Window Init - completed(Handle:0x001C089E)
+
+03:30:13 [ServerInfo] CashShop loaded successfully
+03:30:13 [ServerInfo] ChaosMix loaded successfully
+03:30:13 [ServerInfo] Character loaded successfully
+03:30:13 [ServerInfo] Custom loaded successfully
+03:30:13 [ServerInfo] Command loaded successfully
+03:30:13 [ServerInfo] Common loaded successfully
+03:30:13 [ServerInfo] Event loaded successfully
+03:30:13 [ServerInfo] EventItemBag loaded successfully
+03:30:13 [ServerInfo] Hack loaded successfully
+03:30:13 [ServerInfo] Item loaded successfully
+03:30:13 [ServerInfo] Monster loaded successfully
+03:30:13 [ServerInfo] Move loaded successfully
+03:30:13 [ServerInfo] Quest loaded successfully
+03:30:13 [ServerInfo] Shop loaded successfully
+03:30:13 [ServerInfo] Skill loaded successfully
+03:30:13 [ServerInfo] Util loaded successfully
+03:30:13 [ReadBotInfo] BotSystem loaded successfully
+03:33:02 Mu Debug Console Window Init - completed(Handle:0x003B0724)
+
+03:33:02 [ServerInfo] CashShop loaded successfully
+03:33:02 [ServerInfo] ChaosMix loaded successfully
+03:33:02 [ServerInfo] Character loaded successfully
+03:33:02 [ServerInfo] Custom loaded successfully
+03:33:03 [ServerInfo] Command loaded successfully
+03:33:03 [ServerInfo] Common loaded successfully
+03:33:03 [ServerInfo] Event loaded successfully
+03:33:03 [ServerInfo] EventItemBag loaded successfully
+03:33:03 [ServerInfo] Hack loaded successfully
+03:33:03 [ServerInfo] Item loaded successfully
+03:33:03 [ServerInfo] Monster loaded successfully
+03:33:03 [ServerInfo] Move loaded successfully
+03:33:03 [ServerInfo] Quest loaded successfully
+03:33:03 [ServerInfo] Shop loaded successfully
+03:33:03 [ServerInfo] Skill loaded successfully
+03:33:03 [ServerInfo] Util loaded successfully
+03:33:03 [ReadBotInfo] BotSystem loaded successfully
+03:33:43 Mu Debug Console Window Init - completed(Handle:0x00470826)
+
+03:33:43 [ServerInfo] CashShop loaded successfully
+03:33:43 [ServerInfo] ChaosMix loaded successfully
+03:33:43 [ServerInfo] Character loaded successfully
+03:33:43 [ServerInfo] Custom loaded successfully
+03:33:43 [ServerInfo] Command loaded successfully
+03:33:43 [ServerInfo] Common loaded successfully
+03:33:43 [ServerInfo] Event loaded successfully
+03:33:43 [ServerInfo] EventItemBag loaded successfully
+03:33:43 [ServerInfo] Hack loaded successfully
+03:33:43 [ServerInfo] Item loaded successfully
+03:33:43 [ServerInfo] Monster loaded successfully
+03:33:43 [ServerInfo] Move loaded successfully
+03:33:43 [ServerInfo] Quest loaded successfully
+03:33:43 [ServerInfo] Shop loaded successfully
+03:33:43 [ServerInfo] Skill loaded successfully
+03:33:43 [ServerInfo] Util loaded successfully
+03:33:43 [ReadBotInfo] BotSystem loaded successfully
+03:34:02 [Obj][9000] DelClientNew ()
+03:40:02 [Obj][9000] AddClientNew (197.159.75.59)
+03:40:21 [Obj][9000] AddAccount (111)
+03:40:23 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+03:40:47 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 14, PACKET: C10EF303B0D7C3ABB4F3CAA60000
+03:40:47 [Obj][9000] LogInCharacter (白毛大师)
+03:40:47 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X03, SIZE: 08, PACKET: C10803005D707F1C
+03:40:48 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X66, SIZE: 08, PACKET: C108660002000000
+03:43:07 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C1071100497803
+03:43:08 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C1071100547804
+03:43:10 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C1071100507803
+03:43:11 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C1071100507803
+03:43:13 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C10711004B7805
+03:43:14 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C10711004B7805
+03:43:15 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X11, SIZE: 07, PACKET: C1071100527803
+03:43:27 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CB77F31007AFFFF01
+03:43:36 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CB77F48008AFFFF02
+03:43:44 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CB77F58009AFFFF03
+03:44:09 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CC383E00077FFFF04
+03:45:54 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CB880E00077FFFF05
+03:45:59 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CB880CD0075FFFF06
+03:46:14 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X1E, SIZE: 13, PACKET: C10D1E004CB77F6000AAFFFF07
+03:46:23 [Obj][9000] DelClientNew (197.159.75.59)
+03:46:23 [Obj][9000] LogOutCharacter (白毛大师)
+03:46:23 [Obj][9000] DelAccount (111)
+03:46:23 [Obj][9000] DelClient (197.159.75.59)
+03:48:00 [CustomQuiz] Start
+03:51:00 [CustomQuiz] Finish
+04:01:01 [OnlineLoterry] No Winner
+04:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 136 Y: 200)
+04:15:00 [Invasion Manager] Index(1) Boss Position (Map: 0 X: 232 Y: 168)
+04:48:01 [CustomQuiz] Start
+04:50:01 [Invasion Manager] Index(3) Boss Position (Map: 3 X: 201 Y: 70)
+04:51:01 [CustomQuiz] Finish
+05:01:01 [OnlineLoterry] No Winner
+05:48:00 [CustomQuiz] Start
+05:51:00 [CustomQuiz] Finish
+06:01:01 [OnlineLoterry] No Winner
+06:48:00 [CustomQuiz] Start
+06:50:00 [Invasion Manager] Index(7) Boss Position (Map: 3 X: 196 Y: 72)
+06:51:00 [CustomQuiz] Finish
+07:01:01 [OnlineLoterry] No Winner
+07:48:00 [CustomQuiz] Start
+07:51:00 [CustomQuiz] Finish
+08:01:01 [OnlineLoterry] No Winner
+08:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 139 Y: 199)
+08:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 105 Y: 46)
+08:48:00 [CustomQuiz] Start
+08:50:00 [Invasion Manager] Index(3) Boss Position (Map: 3 X: 200 Y: 70)
+08:51:00 [CustomQuiz] Finish
+09:01:01 [OnlineLoterry] No Winner
+09:48:00 [CustomQuiz] Start
+09:51:00 [CustomQuiz] Finish
+10:01:01 [OnlineLoterry] No Winner
+10:48:00 [CustomQuiz] Start
+10:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 163 Y: 14)
+10:51:00 [CustomQuiz] Finish
+11:01:01 [OnlineLoterry] No Winner
+11:48:00 [CustomQuiz] Start
+11:51:00 [CustomQuiz] Finish
+12:01:01 [OnlineLoterry] No Winner
+12:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 131 Y: 199)
+12:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 150 Y: 71)
+12:48:00 [CustomQuiz] Start
+12:50:00 [Invasion Manager] Index(3) Boss Position (Map: 0 X: 163 Y: 55)
+12:51:00 [CustomQuiz] Finish
+13:01:01 [OnlineLoterry] No Winner
+13:48:00 [CustomQuiz] Start
+13:51:00 [CustomQuiz] Finish
+14:01:01 [OnlineLoterry] No Winner
+14:05:00 [KING OF MU] Start
+14:07:00 [KING OF MU] Finish - No Winner
+14:48:00 [CustomQuiz] Start
+14:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 159 Y: 18)
+14:51:00 [CustomQuiz] Finish
+15:01:01 [OnlineLoterry] No Winner
+15:48:00 [CustomQuiz] Start
+15:51:00 [CustomQuiz] Finish
+16:01:01 [OnlineLoterry] No Winner
+16:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 128 Y: 192)
+16:15:00 [Invasion Manager] Index(1) Boss Position (Map: 2 X: 16 Y: 230)
+16:15:14 Mu Debug Console Window Init - completed(Handle:0x002B0A66)
+
+16:15:14 [ServerInfo] CashShop loaded successfully
+16:15:14 [ServerInfo] ChaosMix loaded successfully
+16:15:14 [ServerInfo] Character loaded successfully
+16:15:14 [ServerInfo] Custom loaded successfully
+16:15:14 [ServerInfo] Command loaded successfully
+16:15:14 [ServerInfo] Common loaded successfully
+16:15:14 [ServerInfo] Event loaded successfully
+16:15:14 [ServerInfo] EventItemBag loaded successfully
+16:15:14 [ServerInfo] Hack loaded successfully
+16:15:14 [ServerInfo] Item loaded successfully
+16:15:14 [ServerInfo] Monster loaded successfully
+16:15:14 [ServerInfo] Move loaded successfully
+16:15:14 [ServerInfo] Quest loaded successfully
+16:15:14 [ServerInfo] Shop loaded successfully
+16:15:14 [ServerInfo] Skill loaded successfully
+16:15:14 [ServerInfo] Util loaded successfully
+16:15:14 [ReadBotInfo] BotSystem loaded successfully
+16:48:00 [CustomQuiz] Start
+16:50:00 [Invasion Manager] Index(3) Boss Position (Map: 0 X: 157 Y: 55)
+16:51:00 [CustomQuiz] Finish
+17:01:01 [OnlineLoterry] No Winner
+17:48:00 [CustomQuiz] Start
+17:51:00 [CustomQuiz] Finish
+18:01:01 [OnlineLoterry] No Winner
+18:48:00 [CustomQuiz] Start
+18:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 159 Y: 20)
+18:51:00 [CustomQuiz] Finish
+19:01:01 [OnlineLoterry] No Winner
+19:48:00 [CustomQuiz] Start
+19:51:00 [CustomQuiz] Finish
+20:01:01 [OnlineLoterry] No Winner
+20:05:00 [Invasion Manager] Index(0) Boss Position (Map: 3 X: 204 Y: 79)
+20:05:41 Mu Debug Console Window Init - completed(Handle:0x001C0A8A)
+
+20:05:41 [ServerInfo] CashShop loaded successfully
+20:05:41 [ServerInfo] ChaosMix loaded successfully
+20:05:41 [ServerInfo] Character loaded successfully
+20:05:41 [ServerInfo] Custom loaded successfully
+20:05:41 [ServerInfo] Command loaded successfully
+20:05:41 [ServerInfo] Common loaded successfully
+20:05:41 [ServerInfo] Event loaded successfully
+20:05:41 [ServerInfo] EventItemBag loaded successfully
+20:05:41 [ServerInfo] Hack loaded successfully
+20:05:41 [ServerInfo] Item loaded successfully
+20:05:41 [ServerInfo] Monster loaded successfully
+20:05:41 [ServerInfo] Move loaded successfully
+20:05:41 [ServerInfo] Quest loaded successfully
+20:05:41 [ServerInfo] Shop loaded successfully
+20:05:41 [ServerInfo] Skill loaded successfully
+20:05:41 [ServerInfo] Util loaded successfully
+20:05:41 [ReadBotInfo] BotSystem loaded successfully
+20:06:40 Mu Debug Console Window Init - completed(Handle:0x00480766)
+
+20:06:40 [ServerInfo] CashShop loaded successfully
+20:06:40 [ServerInfo] ChaosMix loaded successfully
+20:06:40 [ServerInfo] Character loaded successfully
+20:06:40 [ServerInfo] Custom loaded successfully
+20:06:40 [ServerInfo] Command loaded successfully
+20:06:40 [ServerInfo] Common loaded successfully
+20:06:41 [ServerInfo] Event loaded successfully
+20:06:41 [ServerInfo] EventItemBag loaded successfully
+20:06:41 [ServerInfo] Hack loaded successfully
+20:06:41 [ServerInfo] Item loaded successfully
+20:06:41 [ServerInfo] Monster loaded successfully
+20:06:41 [ServerInfo] Move loaded successfully
+20:06:41 [ServerInfo] Quest loaded successfully
+20:06:41 [ServerInfo] Shop loaded successfully
+20:06:41 [ServerInfo] Skill loaded successfully
+20:06:41 [ServerInfo] Util loaded successfully
+20:06:41 [ReadBotInfo] BotSystem loaded successfully
+20:14:45 [Obj][9000] AddClientNew (127.0.0.1)
+20:14:45 [Obj][9000] DelClientNew (127.0.0.1)
+20:14:45 [Obj][9000] DelClient (127.0.0.1)
+20:15:00 [Invasion Manager] Index(1) Boss Position (Map: 0 X: 97 Y: 88)
+20:15:43 [Obj][9000] AddClientNew (127.0.0.1)
+20:15:43 [Obj][9000] DelClientNew (127.0.0.1)
+20:15:43 [Obj][9000] DelClient (127.0.0.1)
+20:16:33 [Obj][9000] AddClientNew (127.0.0.1)
+20:16:34 [Obj][9000] DelClientNew (127.0.0.1)
+20:16:34 [Obj][9000] DelClient (127.0.0.1)
+20:17:10 [Obj][9000] AddClientNew (127.0.0.1)
+20:17:12 [Obj][9000] DelClientNew (127.0.0.1)
+20:17:12 [Obj][9000] DelClient (127.0.0.1)
+20:17:53 [Obj][9000] AddClientNew (127.0.0.1)
+20:17:54 [Obj][9000] AddAccount (111)
+20:17:55 [Obj][9000] DelClientNew (127.0.0.1)
+20:17:55 [Obj][9000] DelAccount (111)
+20:17:55 [Obj][9000] DelClient (127.0.0.1)
+20:18:22 [Obj][9000] AddClientNew (127.0.0.1)
+20:18:23 [Obj][9000] AddAccount (111)
+20:18:25 [Obj][9000] DelClientNew (127.0.0.1)
+20:18:25 [Obj][9000] DelAccount (111)
+20:18:25 [Obj][9000] DelClient (127.0.0.1)

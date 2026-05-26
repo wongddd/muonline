@@ -1,0 +1,541 @@
+[GameServerInfo]
+;==================================================
+; Customer Settings
+;==================================================
+CustomerName = MuOnline
+;CustomerHardwareId = 303547B5-536DBE6B-F45B04B2-8F4BD8E7
+;==================================================
+; Server Settings
+;==================================================
+ServerName = GameServer							;
+ServerCode = 0									;服务器编号
+ServerLock = 0									;服务器VIP等级,0普通,1-3VIP 
+ServerPort = 55901								;服务器端口
+ServerVersion = 1.04.05							;服务器版本
+ServerSerial = TbYehR2hFUPBKgZj					;服务器序列号
+ServerMaxUserNumber = 1000						;服务器最大用户数量
+ServerMinLevel = 0								;最小可进入等级0不限制超过不可以进入
+ServerMaxLevel = 0								;最大可进入等级0不限制超过不可以进入
+ServerMinReset = 0								;最小可进入转生0不限制超过不可以进入
+ServerMaxReset = 0								;最大可进入转生0不限制超过不可以进入
+ServerMinMasterReset = 0						;最小可进入大师转生0不限制超过不可以进入
+ServerMaxMasterReset = 0						;最大可进入大师转生0不限制超过不可以进入
+
+;==================================================
+; Connection Settings
+;==================================================
+DataServerAddress = 127.0.0.1					;DS地址
+DataServerPort = 55960							;DS端口
+JoinServerAddress = 127.0.0.1					;JS地址
+JoinServerPort = 55970							;JS端口
+ConnectServerAddress = 127.0.0.1				;CS地址
+ConnectServerPort = 55557						;CS端口
+
+;==================================================
+; Log Settings
+;==================================================
+WriteChatLog = 0								;聊天日志开关
+WriteCommandLog = 1								;命令日志开关
+WriteTradeLog = 0								;交易日志开关
+WriteConnectLog = 1								;连接日志开关
+WriteHackLog = 1								;外挂日志开关
+WriteCashShopLog = 0							;商城日志开关
+WriteChaosMixLog = 0							;合成日志开关
+
+;==================================================
+; Hack Settings
+;==================================================
+CheckSpeedHack = 0								;
+CheckSpeedHackTolerance = 0						;
+CheckLatencyHack = 0							;
+CheckLatencyHackTolerance = 0					;
+CheckAutoPotionHack = 1							;
+CheckAutoPotionHackTolerance = 500				;
+CheckAutoComboHack = 0							;
+CheckAutoComboHackTolerance = 0					;
+
+;==================================================
+; Hack Speed Skill Settings (HackSkillCheck.txt)
+; Types:
+; 0: Show message in log only
+; 1: Disconnect User
+; 2: Disable Attack
+; 3: Disable attack by x miliseconds
+; 4: Disconnect User & bloc account
+;==================================================
+SpeedHackSkillEnable = 0						;
+SpeedHackSkillType = 1							;
+SpeedHackSkillPenalty = 5000					;
+SpeedHackSkillDialog = 1						;
+SpeedHackSkillDebug = 0							;
+
+;==================================================
+; Common Settings
+;==================================================
+MaxItemOption = 7								;生命追加最大数值1=4,2=8
+MaxIpConnection = 10							;单IP最大连接数,设置3就是每个IP只可以开3个客户端
+PersonalCodeCheck = 0							;个人密码检查
+SetItemAcceptHarmonySwitch = 0					;套装物品是否可以点再生宝石
+
+;==================================================
+; Monster Settings
+;==================================================
+MonsterLifeRate = 100							;怪物生命值比率,设置200就是Monster里怪物血量的2倍
+
+;==================================================
+; Health Bar
+;==================================================
+MonsterHealthBarSwitch = 1						;怪物血条开关
+UserHealthBarSwitch = 1							;玩家血条开关
+
+;==================================================
+; PK Settings
+;==================================================
+NonPK = 0										;不可以PK
+PKLimitFree = 0									;PK不红名开关
+PKDownTime1 = 3600								;红名变更时间1
+PKDownTime2 = 3600								;红名变更时间2
+PKDisableShop = 0								;红名不可以打开商店
+PKDisableTrade = 0								;红名不可以交易
+
+;==================================================
+; Trade Settings
+;==================================================
+TradeSwitch = 1									;交易开关
+
+;==================================================
+; Personal Shop Settings
+;==================================================
+PersonalShopSwitch = 1							;个人商店
+
+;==================================================
+; Custom Shop MessageBox
+;==================================================
+; Types:
+; 0: Disabled
+; 1: Only for coins
+; 2: All purchases
+;==================================================
+CustomShopMessageBox = 2
+
+;==================================================
+; Cash Shop Settings
+;==================================================
+CashShopSwitch = 1								;
+CashShopScriptVersion1 = 512					;
+CashShopScriptVersion2 = 2011					;
+CashShopScriptVersion3 = 6						;
+CashShopBannerVersion1 = 583					;
+CashShopBannerVersion2 = 2010					;
+CashShopBannerVersion3 = 5						;
+CashShopGoblinPointDelay = 10					;
+CashShopGoblinPointValue_AL0 = 1				;
+CashShopGoblinPointValue_AL1 = 1				;
+CashShopGoblinPointValue_AL2 = 1				;
+CashShopGoblinPointValue_AL3 = 1				;
+
+;==================================================
+; Duel Settings
+;==================================================
+DuelSwitch = 0									;决斗开关
+DuelArenaAnnounceSwitch = 1						;竞技场决斗宣布开关
+DuelArenaDisableRestoreHP = 0					;竞技场决斗禁用恢复HP开关
+DuelArenaDisableRestoreSD = 0					;竞技场决斗禁用恢复SD开关
+
+;==================================================
+; Guild Settings
+;==================================================
+GuildCreateSwitch = 1							;战盟创建开关
+GuildDeleteSwitch = 1							;战盟解散开关
+GuildCreateMinLevel = 100						;创建战盟需要等级
+GuildInsertMaxUser1 = 40						;普通职业创建战盟最大成员数量
+GuildInsertMaxUser2 = 80						;圣导创建战盟最大成员数量
+GuildAllianceMinUser = 1						;联盟所需要最少战盟人数
+GuildAllianceMaxCount = 5						;战盟联盟最大数量
+GuildOwnerDestroyLimit = 1						;战盟盟主解散战盟限制
+
+;==================================================
+; Elf Buffer Settings
+; 幻影BUFF伤害=45+玩家等级/5
+; 幻影BUFF防御=50+玩家等级/3
+;==================================================
+ElfBufferMaxLevel_AL0 = 220						;免费帐号使用幻影导师最大等级
+ElfBufferMaxLevel_AL1 = 220						;VIP1帐号使用幻影导师最大等级
+ElfBufferMaxLevel_AL2 = 220						;VIP2帐号使用幻影导师最大等级
+ElfBufferMaxLevel_AL3 = 220						;VIP3帐号使用幻影导师最大等级
+ElfBufferMaxReset_AL0 = 10000					;免费帐号使用幻影导师最大转生
+ElfBufferMaxReset_AL1 = 10000					;VIP1帐号使用幻影导师最大转生
+ElfBufferMaxReset_AL2 = 10000					;VIP2帐号使用幻影导师最大转生
+ElfBufferMaxReset_AL3 = 10000					;VIP3帐号使用幻影导师最大转生
+ElfBufferDamageConstA = 50						;增加攻击A
+ElfBufferDamageConstB = 5						;增加攻击B
+ElfBufferDefenseConstA = 45						;增加防御A
+ElfBufferDefenseConstB = 3						;增加防御B
+
+;==================================================
+; Experience Settings
+;==================================================
+AddExperienceRate_AL0 = 1000						;免费账号经验倍数
+AddExperienceRate_AL1 = 1000					;
+AddExperienceRate_AL2 = 1000					;
+AddExperienceRate_AL3 = 1000					;
+AddMasterExperienceRate_AL0 = 1000				;免费帐号大师经验倍数
+AddMasterExperienceRate_AL1 = 1000				;
+AddMasterExperienceRate_AL2 = 1000				;
+AddMasterExperienceRate_AL3 = 1000				;
+MinMasterExperienceMonsterLevel_AL0 = 95		;免费帐号最小可获得大师经验怪物等级
+MinMasterExperienceMonsterLevel_AL1 = 95		;
+MinMasterExperienceMonsterLevel_AL2 = 95		;
+MinMasterExperienceMonsterLevel_AL3 = 95		;
+AddEventExperienceRate_AL0 = 1000				;免费账号活动经验倍数
+AddEventExperienceRate_AL1 = 1000				;
+AddEventExperienceRate_AL2 = 1000				;
+AddEventExperienceRate_AL3 = 1000				;
+OffAttackExperienceRate_AL0 = 1000				;免费帐号离线经验倍数
+OffAttackExperienceRate_AL1 = 1000				;
+OffAttackExperienceRate_AL2 = 1000				;
+OffAttackExperienceRate_AL3 = 1000				;
+AutoResetExperienceRate_AL0 = 1000				;免费自动转生经验倍数
+AutoResetExperienceRate_AL1 = 1000				;
+AutoResetExperienceRate_AL2 = 1000				;
+AutoResetExperienceRate_AL3 = 1000				;
+
+;==================================================
+; Item Drop Settings
+;==================================================
+ItemDropTime = 30								;物品消失时间
+ItemDropRate_AL0 = 100							;免费帐号物品掉率
+ItemDropRate_AL1 = 100							;VIP1帐号物品掉率
+ItemDropRate_AL2 = 100							;VIP2帐号物品掉率
+ItemDropRate_AL3 = 100							;VIP3帐号物品掉率
+
+;==================================================
+; Money Drop Settings
+;==================================================
+MoneyDropTime = 30								;金币消失时间
+MoneyAmountDropRate_AL0 = 50					;免费帐号金币掉率
+MoneyAmountDropRate_AL1 = 50					;VIP1帐号金币掉率
+MoneyAmountDropRate_AL2 = 50					;VIP2帐号金币掉率
+MoneyAmountDropRate_AL3 = 50					;VIP3帐号金币掉率
+
+;==================================================
+; Advanced Money Drop Settings
+; If > 0 enable the system
+; Money Drop = (MoneyValue*MonterLevel) + % ItemBonus
+; 高级金币掉率系统
+; 如果大于0则启用
+; 掉落的金币 = 金币价格*怪物等级+装备百分比加成
+;==================================================
+MoneyValue_AL0 = 0								;免费帐号掉落金币价格
+MoneyValue_AL1 = 0								;vip1帐号掉落金币价格
+MoneyValue_AL2 = 0								;vip2帐号掉落金币价格
+MoneyValue_AL3 = 0								;vip3帐号掉落金币价格
+
+;==================================================
+; Item Durability Settings
+;==================================================
+WeaponDurabilityRate = 100						;武器耐久度降低百分比
+ArmorDurabilityRate = 100						;装备耐久度降低百分比
+WingDurabilityRate = 100						;翅膀耐久度降低百分比
+GuardianDurabilityRate = 100					;守护耐久度降低百分比
+PendantDurabilityRate = 100						;项链耐久度降低百分比
+RingDurabilityRate = 100						;戒指耐久度降低百分比
+PetDurabilityRate = 100							;宠物耐久度降低百分比
+
+;==================================================
+; Trade Item Block Settings
+;==================================================
+TradeItemBlock = 1								;装备交易限制
+TradeItemBlockExc = 0							;卓越物品交易限制
+TradeItemBlockSet = 0							;套装物品交易限制
+TradeItemBlockHarmony = 1						;有再生属性装备交易限制
+TradeItemBlockSell = 0							;装备出售限制
+
+;==================================================
+; Level Up Settings
+;==================================================
+MaxLevelUp = 1									;每次经验满了可以升几级
+MaxLevelUpEvent = 1								;事件活动经验满了每次可以升几级
+MaxStatPoint_AL0 = 65000						;普通账号最多单属性加点总数
+MaxStatPoint_AL1 = 65000						;
+MaxStatPoint_AL2 = 65000						;
+MaxStatPoint_AL3 = 65000						;
+DWLevelUpPoint = 21								;法师每次升级增加的点数5
+DKLevelUpPoint = 21								;战士每次升级增加的点数5
+FELevelUpPoint = 21								;弓箭手每次升级增加的点数5
+MGLevelUpPoint = 23								;魔剑士每次升级增加的点数7
+DLLevelUpPoint = 23								;圣导师每次升级增加的点数7
+SULevelUpPoint = 21								;召唤师每次升级增加的点数5
+PlusStatPoint = 1								;转职后增加的点数
+
+;==================================================
+; Create Character Settings
+;==================================================
+CharacterCreateSwitch = 1						;创建角色开关
+MGCreateType = 0								;魔剑创建类型
+DLCreateType = 0								;圣导创建类型
+SUCreateType = 0								;召唤创建类型
+MGCreateLevel_AL0 = 220							;免费帐号创建魔剑所需等级
+MGCreateLevel_AL1 = 220							;
+MGCreateLevel_AL2 = 220							;
+MGCreateLevel_AL3 = 220							;
+MGCreateReset_AL0 = 0							;免费帐号创建魔剑所需转生次数
+MGCreateReset_AL1 = 0							;
+MGCreateReset_AL2 = 0							;
+MGCreateReset_AL3 = 0							;
+MGCreateMasterReset_AL0 = 0						;免费帐号创建魔剑所需转世次数
+MGCreateMasterReset_AL1 = 0						;
+MGCreateMasterReset_AL2 = 0						;
+MGCreateMasterReset_AL3 = 0						;
+DLCreateLevel_AL0 = 250							;免费帐号创建圣导所需等级
+DLCreateLevel_AL1 = 250							;
+DLCreateLevel_AL2 = 250							;
+DLCreateLevel_AL3 = 250							;
+DLCreateReset_AL0 = 0							;免费帐号创建圣导所需转生次数
+DLCreateReset_AL1 = 0							;
+DLCreateReset_AL2 = 0							;
+DLCreateReset_AL3 = 0							;
+DLCreateMasterReset_AL0 = 0						;免费帐号创建圣导所需转世次数
+DLCreateMasterReset_AL1 = 0						;
+DLCreateMasterReset_AL2 = 0						;
+DLCreateMasterReset_AL3 = 0						;
+SUCreateLevel_AL0 = 0							;免费帐号创建召唤所需等级
+SUCreateLevel_AL1 = 0							;
+SUCreateLevel_AL2 = 0							;
+SUCreateLevel_AL3 = 0							;
+SUCreateReset_AL0 = 0							;免费帐号创建召唤所需转生次数
+SUCreateReset_AL1 = 0							;
+SUCreateReset_AL2 = 0							;
+SUCreateReset_AL3 = 0							;
+SUCreateMasterReset_AL0 = 0						;免费帐号创建召唤所需转世次数
+SUCreateMasterReset_AL1 = 0						;
+SUCreateMasterReset_AL2 = 0						;
+SUCreateMasterReset_AL3 = 0						;
+
+;==================================================
+; Shield Gauge Settings
+;==================================================
+ShieldGaugeRate = 90							;PvP造成的伤害百分比
+ShieldGaugeConstA = 12							;公式A常数
+ShieldGaugeConstB = 15							;公式B常数
+ShieldGaugeAttackRate = 2						;攻击成功率公式常数
+ShieldGaugeAttackComboMiss = 0					;连击如果MISS是否重连
+
+;==================================================
+; Master Skill Tree Settings
+;==================================================
+MasterSkillTree = 1								;大师每次升几级
+MasterSkillTreePoint = 1						;大师升级点数
+MasterSkillTreeMaxLevel = 200					;最高大师等级
+
+;==================================================
+; Pc Point Settings
+;==================================================
+PcPointSwitch = 1								;
+PcPointMaxPoint = 1008							;
+
+;==================================================
+; Party Settings
+;==================================================
+PartyReconnectTime = 300						;掉线不掉队时间
+PartyGeneralExperience1 = 100					;一般组队经验倍数
+PartyGeneralExperience2 = 80					;一般组队经验倍数
+PartyGeneralExperience3 = 60					;一般组队经验倍数
+PartyGeneralExperience4 = 50					;一般组队经验倍数
+PartyGeneralExperience5 = 45					;一般组队经验倍数
+PartySpecialExperience1 = 100					;特殊组队经验倍数
+PartySpecialExperience2 = 80					;特殊组队经验倍数
+PartySpecialExperience3 = 75					;特殊组队经验倍数
+PartySpecialExperience4 = 65					;特殊组队经验倍数
+PartySpecialExperience5 = 60					;特殊组队经验倍数
+PartyDisablePK = 0								;禁止伤害队友
+
+;==================================================
+; Potion Settings
+;==================================================
+ApplePotionRate = 10							;苹果回复生命百分比
+SmallLifePotionRate = 20						;小瓶治疗药水回复生命百分比
+MidleLifePotionRate = 30						;中瓶治疗药水回复生命百分比
+LargeLifePotionRate = 40						;大瓶治疗药水回复生命百分比
+SmallManaPotionRate = 20						;小瓶魔力药水回复魔力百分比
+MidleManaPotionRate = 30						;中瓶魔力药水回复魔力百分比
+LargeManaPotionRate = 40						;大瓶魔力药水回复魔力百分比
+SmallShieldPotionRate = 25						;小瓶SD药水回复防护值百分比
+MidleShieldPotionRate = 35						;中瓶SD药水回复防护值百分比
+LargeShieldPotionRate = 45						;大瓶SD药水回复防护值百分比
+SmallCompoundPotionRate1 = 10					;小瓶生命药水每秒回复生命百分比
+SmallCompoundPotionRate2 = 5					;小瓶生命药水回复生命秒数
+MidleCompoundPotionRate1 = 25					;中瓶生命药水每秒回复生命百分比
+MidleCompoundPotionRate2 = 10					;中瓶生命药水回复生命秒数
+LargeCompoundPotionRate1 = 45					;大瓶生命药水每秒回复生命百分比
+LargeCompoundPotionRate2 = 20					;大瓶生命药水回复生命秒数
+EliteLifePotionRate = 100						;精华生命药水回复生命百分比
+EliteManaPotionRate = 100						;精华魔力药水回复生命百分比
+EliteShieldPotionRate = 65						;精华SD药水回复防护值百分比
+
+;==================================================
+; Transformation Ring Settings
+; 变身戒指设置(参照Monster)
+;==================================================
+TransformationRing1 = 2							;幼龙变身戒指
+TransformationRing2 = 7							;巨人变身戒指
+TransformationRing3 = 14						;骷髅兵变身戒指
+TransformationRing4 = 8							;毒牛怪变身戒指
+TransformationRing5 = 9							;死灵巫师变身戒指
+TransformationRing6 = 41						;牛魔王变身戒指
+
+;==================================================
+; Jewel Settings
+;==================================================
+SoulSuccessRate_AL0 = 50						;免费帐号灵魂宝石成功率
+SoulSuccessRate_AL1 = 50						;
+SoulSuccessRate_AL2 = 50						;
+SoulSuccessRate_AL3 = 50						;
+LifeSuccessRate_AL0 = 50						;免费帐号生命宝石成功率
+LifeSuccessRate_AL1 = 50						;
+LifeSuccessRate_AL2 = 50						;
+LifeSuccessRate_AL3 = 50						;
+HarmonySuccessRate_AL0 = 50						;免费帐号再生宝石成功率
+HarmonySuccessRate_AL1 = 50						;
+HarmonySuccessRate_AL2 = 50						;
+HarmonySuccessRate_AL3 = 50						;
+SmeltStoneSuccessRate1_AL0 = 50					;免费帐号冶炼初级进化宝石成功率
+SmeltStoneSuccessRate1_AL1 = 50					;
+SmeltStoneSuccessRate1_AL2 = 50					;
+SmeltStoneSuccessRate1_AL3 = 50					;
+SmeltStoneSuccessRate2_AL0 = 70					;免费帐号冶炼高级进化宝石成功率
+SmeltStoneSuccessRate2_AL1 = 70					;
+SmeltStoneSuccessRate2_AL2 = 70					;
+SmeltStoneSuccessRate2_AL3 = 70					;
+AddLuckSuccessRate1_AL0 = 25					;免费帐号带幸运装备灵魂宝石成功率增加百分比
+AddLuckSuccessRate1_AL1 = 25					;
+AddLuckSuccessRate1_AL2 = 25					;
+AddLuckSuccessRate1_AL3 = 25					;
+AddLuckSuccessRate2_AL0 = 20					;免费帐号合成时有幸运物品增加成功率
+AddLuckSuccessRate2_AL1 = 20					;
+AddLuckSuccessRate2_AL2 = 20					;
+AddLuckSuccessRate2_AL3 = 20					;
+
+;==================================================
+; Fruit Settings
+;==================================================
+FruitAddPointMin = 1							;吃果实最少增加多少属性点
+FruitAddPointMax = 3							;吃果实最多增加多少属性点
+FruitAddPointSuccessRate_AL0 = -1				;免费帐号吃果实增加点数成功率
+FruitAddPointSuccessRate_AL1 = -1				;
+FruitAddPointSuccessRate_AL2 = -1				;
+FruitAddPointSuccessRate_AL3 = -1				;
+FruitSubPointMin = 1							;吃果实最少减去多少属性点
+FruitSubPointMax = 9							;吃果实最多减去多少属性点
+FruitSubPointSuccessRate_AL0 = -1				;免费帐号吃果实减少点数成功率
+FruitSubPointSuccessRate_AL1 = -1				;
+FruitSubPointSuccessRate_AL2 = -1				;
+FruitSubPointSuccessRate_AL3 = -1				;
+
+;==================================================
+; HP Bonus System
+; Aumenta a vida do personagem de acordo com a quantidade de master reset
+;==================================================
+HpBonus_AL0 = 1									;免费帐号转世次数增加生命值数
+HpBonus_AL1 = 1									;
+HpBonus_AL2 = 1									;
+HpBonus_AL3 = 1									;
+HpBonus_MAX = 10000								;最多可增加多少生命值
+
+;==================================================
+; Die System
+; Mostra mensagem no chat quando o personagem morre.
+;==================================================
+DieUserSwitch = 1								;被玩家击杀显示公告
+DieMonsterSwitch = 1							;被怪物击杀显示公告
+
+;==================================================
+; 上线提醒
+;==================================================
+OnlineGmSwitch = 0								;GM上线提醒
+OnlineUserSwitch = 0							;玩家上线提醒
+
+;==================================================
+; Disable exp message
+; Desabilita a mensagem de experiencia ganha ao matar um mob.
+; S??exibida quando sobe de level.
+;==================================================
+DisableExpMessage = 0							;禁用获得的经验信息
+
+;==================================================
+; 禁用技能效果0=关 1=开 开启后 某些技能会不显示动画只有动作
+;==================================================
+DisableLightningEffect  = 0						;
+DisableCycloneEffect  = 0						;
+DisableTwistEffect  = 0							;
+DisableLungEffect  = 0							;
+DisableFallingEffect  = 0						;
+DisableUpperCutEffect  = 0						;
+
+;==================================================
+; Disable Wings Class Mix
+; 禁止2-3带翅膀合成
+;==================================================
+DisableWingMixDL = 1							;禁止圣导2-3带翅膀合成
+DisableWingMixSU = 1							;禁止召唤2-3带翅膀合成
+
+;==================================================
+; Pk Can Enter in events
+; Permitir Pk entrar nos eventos
+;==================================================
+PkCanEnterBC = 0								;红名可以进入血色城堡
+PkCanEnterCC = 0								;红名可以进入赤色要塞
+PkCanEnterDS = 0								;红名可以进入恶魔广场
+
+;==================================================
+; Pk Item Drop
+;==================================================
+PkItemDropSwitch = 1							;红名掉装备
+PkItemDropEnable_AL0 = 1						;免费帐号红名掉落装备开关
+PkItemDropEnable_AL1 = 1						;
+PkItemDropEnable_AL2 = 1						;
+PkItemDropEnable_AL3 = 1						;
+PkItemDropMinLevel = 0							;红名掉落装备最小等级
+PkItemDropMaxLevel = 15							;红名掉落装备最大等级
+PkItemDropExecellent = 1						;红名是否可以掉落卓越装备
+PkItemDropSocketItem = 1						;红名是否可以掉落镶嵌装备
+PkItemDropSetItem = 1							;红名是否可以掉落套装
+PkItemDropHarmony = 1							;红名是否可以掉落再生属性装备
+PkItemDropRate = 100							;红名掉落装备概率
+
+;==================================================
+; Disconnect Online Account
+; Ao logar desconecta a conta se ela estiver online
+;==================================================
+DisconnectOnlineAccount = 1						;断开在线账号
+
+;==================================================
+; Enable CS Skills in All Maps
+;==================================================
+EnableCsSkillsAllMaps = 0						;攻城技能全部地图都可用
+
+;==================================================
+; Enable Combo to all Classes
+; 全职业连击 0=关 1=开
+; - 0: 三连击
+; - 1: 一个技能连击
+; - 2: 两个技能连击
+;==================================================
+EnableComboToAllSwitch = 1						;全职业连击开关
+
+;==================================================
+; Gens System Settings
+;==================================================
+GensSystemSwitch = 1							;家族系统开关
+GensSystemGuildLock = 0							;是否限制不同的家族进同一个战盟
+GensSystemPartyLock = 0							;是否限制不同的家族可以组队
+GensSystemInsertMinLevel = 50					;加入家族最小等级
+GensSystemContributionFloodTime = 30			;家族声望时间间隔
+GensSystemVictimContributionDecrease = 3		;被敌对家族杀死损失多少声望
+GensSystemKillerContributionIncrease = 500		;杀死敌对家族获得多少声望
+GensSystemVictimMinContributionDecrease = 1		;被敌对家族杀死最少减少多少声望
+GensSystemVictimMaxContributionDecrease = 15	;被敌对家族杀死最多减少多少声望
+GensSystemKillerMinContributionIncrease = 1		;杀敌敌对家族最少获得多少声望
+GensSystemKillerMaxContributionIncrease = 15	;杀死敌对家族最多获得多少声望
+GensSystemStartRewardDay = 1					;周几领取家族奖励
+GensSystemFinalRewardDay = 7					;周几领取家族最终奖励

@@ -1,0 +1,3 @@
+06:26:25 [SocketManager] Protocol header error (Index: 9000, Header: 16)
+06:26:35 [SocketManager] Protocol header error (Index: 9000, Header: 47)
+06:26:45 [SocketManager] Protocol header error (Index: 9000, Header: 3)

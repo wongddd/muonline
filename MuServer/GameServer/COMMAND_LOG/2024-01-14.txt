@@ -1,0 +1,5 @@
+17:24:04 [CommandMoney][0000][魔法师] - (Money: 999999999)
+17:26:27 [CommandPost][0000][魔法师] - (Message: 1)
+17:26:38 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 10)
+17:26:54 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 160)
+18:47:28 [CommandAddPoint][0000][魔法师] - (Type: 3, Amount: 50)

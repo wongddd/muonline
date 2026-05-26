@@ -1,0 +1,241 @@
+15:33:28 [ServerInfo] CashShop loaded successfully
+15:33:28 [ServerInfo] ChaosMix loaded successfully
+15:33:28 [ServerInfo] Character loaded successfully
+15:33:28 [ServerInfo] Custom loaded successfully
+15:33:28 [ServerInfo] Command loaded successfully
+15:33:28 [ServerInfo] Common loaded successfully
+15:33:28 [ServerInfo] Event loaded successfully
+15:33:28 [ServerInfo] EventItemBag loaded successfully
+15:33:28 [ServerInfo] Hack loaded successfully
+15:33:28 [ServerInfo] Item loaded successfully
+15:33:28 [ServerInfo] Monster loaded successfully
+15:33:28 [ServerInfo] Move loaded successfully
+15:33:28 [ServerInfo] Quest loaded successfully
+15:33:28 [ServerInfo] Shop loaded successfully
+15:33:28 [ServerInfo] Skill loaded successfully
+15:33:28 [ServerInfo] Util loaded successfully
+15:33:28 [ReadBotInfo] BotSystem loaded successfully
+15:34:57 [Obj][9000] AddClient (14.155.91.134)
+15:35:01 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF1, SIZE: 59, PACKET: C13BF101CDFD98CDFD98FCCFABFCCDFD98CDFD98FCCFABFCCFABFCCFABFCCFABFCCF05E7200A31303430355462596568523268465550424B675A6A
+15:35:01 [Obj][9000] AddAccount (123123)
+15:35:01 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 05, PACKET: C105F30000
+15:35:02 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+15:35:07 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 15, PACKET: C10FF301C4A7B7A8CAA60000000000
+15:35:09 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 14, PACKET: C10EF303C4A7B7A8CAA600000000
+15:35:09 [Obj][9000] LogInCharacter (魔法师)
+15:35:09 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X03, SIZE: 08, PACKET: C1080300AF395D2B
+15:38:13 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X30, SIZE: 05, PACKET: C10530000D
+15:38:14 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF6, SIZE: 04, PACKET: C104F631
+15:38:14 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+15:38:17 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110053
+15:38:18 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110059
+15:38:28 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 34, PACKET: C122F330FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF15FFFFFF16FF00000000
+15:38:28 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF1, SIZE: 05, PACKET: C105F10201
+15:38:28 [Obj][9000] LogOutCharacter (魔法师)
+15:38:28 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 05, PACKET: C105F30000
+15:38:28 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+15:38:34 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 14, PACKET: C10EF3033F3F3F00000000000000
+15:38:34 [Obj][9000] LogInCharacter (???)
+15:38:34 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X03, SIZE: 08, PACKET: C108030059E479CC
+15:38:36 [Obj][9000] LogOutCharacter (???)
+15:38:36 [Obj][9000] DelAccount (123123)
+15:38:36 [Obj][9000] DelClient (14.155.91.134)
+15:40:55 [ServerInfo] CashShop loaded successfully
+15:40:55 [ServerInfo] ChaosMix loaded successfully
+15:40:55 [ServerInfo] Character loaded successfully
+15:40:55 [ServerInfo] Custom loaded successfully
+15:40:55 [ServerInfo] Command loaded successfully
+15:40:55 [ServerInfo] Common loaded successfully
+15:40:55 [ServerInfo] Event loaded successfully
+15:40:55 [ServerInfo] EventItemBag loaded successfully
+15:40:55 [ServerInfo] Hack loaded successfully
+15:40:55 [ServerInfo] Item loaded successfully
+15:40:55 [ServerInfo] Monster loaded successfully
+15:40:55 [ServerInfo] Move loaded successfully
+15:40:55 [ServerInfo] Quest loaded successfully
+15:40:55 [ServerInfo] Shop loaded successfully
+15:40:55 [ServerInfo] Skill loaded successfully
+15:40:55 [ServerInfo] Util loaded successfully
+15:40:55 [ReadBotInfo] BotSystem loaded successfully
+15:41:06 [Obj][9000] AddClient (14.155.91.134)
+15:41:09 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF1, SIZE: 59, PACKET: C13BF101CDFD98CDFD98FCCFABFCCDFD98CDFD98FCCFABFCCFABFCCFABFCCFABFCCFA886260A31303430355462596568523268465550424B675A6A
+15:41:09 [Obj][9000] AddAccount (123123)
+15:41:09 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 05, PACKET: C105F30000
+15:41:10 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+15:41:15 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 34, PACKET: C122F3023F3F3F000000000000003131313131313131313131000000000000000000
+15:41:21 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 15, PACKET: C10FF301C4A7B7A8CAA60000000000
+15:41:23 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 14, PACKET: C10EF303C4A7B7A8CAA600000000
+15:41:23 [Obj][9000] LogInCharacter (魔法师)
+15:41:23 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X03, SIZE: 08, PACKET: C1080300F03F9F61
+15:41:35 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X30, SIZE: 05, PACKET: C10530000D
+15:41:36 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF6, SIZE: 04, PACKET: C104F631
+15:41:36 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+15:41:44 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110050
+15:41:45 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C107190011004E
+15:41:48 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110052
+15:41:49 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110054
+15:41:51 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110053
+15:41:52 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X19, SIZE: 07, PACKET: C1071900110055
+15:41:55 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 34, PACKET: C122F330FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF15FFFFFF36FF00000000
+15:41:56 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF1, SIZE: 05, PACKET: C105F10201
+15:41:56 [Obj][9000] LogOutCharacter (魔法师)
+15:41:56 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 05, PACKET: C105F30000
+15:41:56 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X31, SIZE: 03, PACKET: C10331
+15:41:58 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0XF3, SIZE: 14, PACKET: C10EF303C4A7B7A8CAA600000000
+15:41:58 [Obj][9000] LogInCharacter (魔法师)
+15:41:58 PacketIN: INDEX: 9000 TYPE: 0XC1, HEAD: 0X03, SIZE: 08, PACKET: C1080300F3BFF314
+15:46:57 [Obj][9000] LogOutCharacter (魔法师)
+15:46:57 [Obj][9000] DelAccount (123123)
+15:46:57 [Obj][9000] DelClient (14.155.91.134)
+15:48:02 [ServerInfo] CashShop loaded successfully
+15:48:02 [ServerInfo] ChaosMix loaded successfully
+15:48:02 [ServerInfo] Character loaded successfully
+15:48:02 [ServerInfo] Custom loaded successfully
+15:48:02 [ServerInfo] Command loaded successfully
+15:48:02 [ServerInfo] Common loaded successfully
+15:48:02 [ServerInfo] Event loaded successfully
+15:48:02 [ServerInfo] EventItemBag loaded successfully
+15:48:02 [ServerInfo] Hack loaded successfully
+15:48:02 [ServerInfo] Item loaded successfully
+15:48:02 [ServerInfo] Monster loaded successfully
+15:48:02 [ServerInfo] Move loaded successfully
+15:48:02 [ServerInfo] Quest loaded successfully
+15:48:02 [ServerInfo] Shop loaded successfully
+15:48:02 [ServerInfo] Skill loaded successfully
+15:48:02 [ServerInfo] Util loaded successfully
+15:48:02 [ReadBotInfo] BotSystem loaded successfully
+15:48:15 [Obj][9000] AddClient (14.155.91.134)
+15:48:18 [Obj][9000] AddAccount (123123)
+15:48:20 [Obj][9000] LogInCharacter (魔法师)
+15:49:39 [Obj][9000] LogOutCharacter (魔法师)
+15:49:41 [Obj][9000] DelAccount (123123)
+15:49:41 [Obj][9000] DelClient (14.155.91.134)
+16:01:01 [OnlineLoterry] No Winner
+16:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 131 Y: 198)
+16:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 143 Y: 112)
+16:39:41 [Obj][9000] AddClient (14.155.91.134)
+16:39:44 [Obj][9000] AddAccount (123123)
+16:39:47 [Obj][9000] LogInCharacter (魔法师)
+16:47:34 [Obj][9000] LogOutCharacter (魔法师)
+16:47:48 [Obj][9000] LogInCharacter (战士)
+16:47:56 [Obj][9000] LogOutCharacter (战士)
+16:48:00 [CustomQuiz] Start
+16:48:02 [Obj][9000] LogInCharacter (战士)
+16:48:05 [Obj][9000] LogOutCharacter (战士)
+16:48:21 [Obj][9000] LogInCharacter (弓箭手)
+16:48:31 [Obj][9000] LogOutCharacter (弓箭手)
+16:48:45 [Obj][9000] DelAccount (123123)
+16:48:45 [Obj][9000] DelClient (14.155.91.134)
+16:50:00 [Invasion Manager] Index(3) Boss Position (Map: 0 X: 154 Y: 47)
+16:51:00 [CustomQuiz] Finish
+16:56:01 [Obj][9000] AddClient (14.155.91.134)
+16:56:04 [Obj][9000] AddAccount (123123)
+16:56:10 [Obj][9000] LogInCharacter (魔法师)
+16:57:03 [Obj][9000] LogOutCharacter (魔法师)
+16:57:03 [Obj][9000] DelAccount (123123)
+16:57:03 [Obj][9000] DelClient (14.155.91.134)
+17:02:35 [ServerInfo] CashShop loaded successfully
+17:02:35 [ServerInfo] ChaosMix loaded successfully
+17:02:35 [ServerInfo] Character loaded successfully
+17:02:35 [ServerInfo] Custom loaded successfully
+17:02:35 [ServerInfo] Command loaded successfully
+17:02:35 [ServerInfo] Common loaded successfully
+17:02:35 [ServerInfo] Event loaded successfully
+17:02:35 [ServerInfo] EventItemBag loaded successfully
+17:02:35 [ServerInfo] Hack loaded successfully
+17:02:35 [ServerInfo] Item loaded successfully
+17:02:35 [ServerInfo] Monster loaded successfully
+17:02:35 [ServerInfo] Move loaded successfully
+17:02:35 [ServerInfo] Quest loaded successfully
+17:02:35 [ServerInfo] Shop loaded successfully
+17:02:35 [ServerInfo] Skill loaded successfully
+17:02:35 [ServerInfo] Util loaded successfully
+17:02:35 [ReadBotInfo] BotSystem loaded successfully
+17:02:42 [Obj][9000] AddClient (14.155.91.134)
+17:02:52 [Obj][9000] DelClient (14.155.91.134)
+17:03:23 [Obj][9000] AddClient (14.155.91.134)
+17:04:00 [Obj][9000] DelClient (14.155.91.134)
+17:10:25 [ServerInfo] CashShop loaded successfully
+17:10:25 [ServerInfo] ChaosMix loaded successfully
+17:10:25 [ServerInfo] Character loaded successfully
+17:10:25 [ServerInfo] Custom loaded successfully
+17:10:25 [ServerInfo] Command loaded successfully
+17:10:25 [ServerInfo] Common loaded successfully
+17:10:25 [ServerInfo] Event loaded successfully
+17:10:25 [ServerInfo] EventItemBag loaded successfully
+17:10:25 [ServerInfo] Hack loaded successfully
+17:10:25 [ServerInfo] Item loaded successfully
+17:10:25 [ServerInfo] Monster loaded successfully
+17:10:25 [ServerInfo] Move loaded successfully
+17:10:25 [ServerInfo] Quest loaded successfully
+17:10:25 [ServerInfo] Shop loaded successfully
+17:10:25 [ServerInfo] Skill loaded successfully
+17:10:25 [ServerInfo] Util loaded successfully
+17:10:25 [ReadBotInfo] BotSystem loaded successfully
+17:10:35 [Obj][9000] AddClient (14.155.91.134)
+17:10:48 [Obj][9000] DelClient (14.155.91.134)
+17:14:29 [ServerInfo] CashShop loaded successfully
+17:14:29 [ServerInfo] ChaosMix loaded successfully
+17:14:29 [ServerInfo] Character loaded successfully
+17:14:29 [ServerInfo] Custom loaded successfully
+17:14:29 [ServerInfo] Command loaded successfully
+17:14:29 [ServerInfo] Common loaded successfully
+17:14:29 [ServerInfo] Event loaded successfully
+17:14:29 [ServerInfo] EventItemBag loaded successfully
+17:14:29 [ServerInfo] Hack loaded successfully
+17:14:29 [ServerInfo] Item loaded successfully
+17:14:29 [ServerInfo] Monster loaded successfully
+17:14:29 [ServerInfo] Move loaded successfully
+17:14:29 [ServerInfo] Quest loaded successfully
+17:14:29 [ServerInfo] Shop loaded successfully
+17:14:29 [ServerInfo] Skill loaded successfully
+17:14:29 [ServerInfo] Util loaded successfully
+17:14:29 [ReadBotInfo] BotSystem loaded successfully
+17:14:42 [Obj][9000] AddClient (14.155.91.134)
+17:14:44 [Obj][9000] AddAccount (0000)
+17:14:55 [Obj][9000] LogInCharacter (战士)
+17:15:31 [Obj][9000] LogOutCharacter (战士)
+17:15:32 [Obj][9000] LogInCharacter (战士)
+17:17:20 [Obj][9000] LogOutCharacter (战士)
+17:17:32 [Obj][9000] LogInCharacter (魔法师)
+17:26:42 [Obj][9000] LogOutCharacter (魔法师)
+17:26:43 [Obj][9000] LogInCharacter (魔法师)
+17:26:57 [Obj][9000] LogOutCharacter (魔法师)
+17:26:59 [Obj][9000] LogInCharacter (魔法师)
+17:28:47 [Obj][9000] LogOutCharacter (魔法师)
+17:28:47 [Obj][9000] DelAccount (0000)
+17:28:47 [Obj][9000] DelClient (14.155.91.134)
+17:48:00 [CustomQuiz] Start
+17:51:00 [CustomQuiz] Finish
+18:01:01 [OnlineLoterry] No Winner
+18:38:26 [Obj][9000] AddClient (14.155.91.134)
+18:38:28 [Obj][9000] AddAccount (0000)
+18:38:31 [Obj][9000] LogInCharacter (魔法师)
+18:47:31 [Obj][9000] LogOutCharacter (魔法师)
+18:47:33 [Obj][9000] LogInCharacter (魔法师)
+18:48:00 [CustomQuiz] Start
+18:48:23 [Obj][9000] LogOutCharacter (魔法师)
+18:48:23 [Obj][9000] DelAccount (0000)
+18:48:23 [Obj][9000] DelClient (14.155.91.134)
+18:50:00 [Invasion Manager] Index(7) Boss Position (Map: 3 X: 202 Y: 85)
+18:51:00 [CustomQuiz] Finish
+19:01:01 [OnlineLoterry] No Winner
+19:48:00 [CustomQuiz] Start
+19:51:00 [CustomQuiz] Finish
+20:01:01 [OnlineLoterry] No Winner
+20:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 136 Y: 196)
+20:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 95 Y: 191)
+20:48:00 [CustomQuiz] Start
+20:50:00 [Invasion Manager] Index(3) Boss Position (Map: 3 X: 198 Y: 78)
+20:51:00 [CustomQuiz] Finish
+21:01:01 [OnlineLoterry] No Winner
+21:48:00 [CustomQuiz] Start
+21:51:00 [CustomQuiz] Finish
+22:01:01 [OnlineLoterry] No Winner
+22:05:00 [KING OF MU] Start
+22:07:00 [KING OF MU] Finish - No Winner
+22:48:00 [CustomQuiz] Start
+22:51:00 [CustomQuiz] Finish
+23:01:01 [OnlineLoterry] No Winner
+23:48:00 [CustomQuiz] Start
+23:51:00 [CustomQuiz] Finish

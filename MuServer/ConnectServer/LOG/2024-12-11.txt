@@ -1,0 +1,2 @@
+15:10:47 [SocketManager] Protocol header error (Index: 0, Header: 3)
+23:10:58 [SocketManager] Protocol header error (Index: 2, Header: 3)

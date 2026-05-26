@@ -1,0 +1,50 @@
+00:01:01 [OnlineLoterry] No Winner
+00:05:00 [Invasion Manager] Index(0) Boss Position (Map: 3 X: 197 Y: 79)
+00:12:00 [KING OF MU] Start
+00:14:00 [KING OF MU] Finish - No Winner
+00:15:00 [Invasion Manager] Index(1) Boss Position (Map: 2 X: 43 Y: 195)
+00:48:00 [CustomQuiz] Start
+00:50:00 [Invasion Manager] Index(3) Boss Position (Map: 2 X: 162 Y: 12)
+00:51:00 [CustomQuiz] Finish
+01:01:01 [OnlineLoterry] No Winner
+01:48:00 [CustomQuiz] Start
+01:51:00 [CustomQuiz] Finish
+02:01:01 [OnlineLoterry] No Winner
+02:48:00 [CustomQuiz] Start
+02:50:00 [Invasion Manager] Index(7) Boss Position (Map: 0 X: 156 Y: 48)
+02:51:00 [CustomQuiz] Finish
+03:01:01 [OnlineLoterry] No Winner
+03:48:00 [CustomQuiz] Start
+03:51:00 [CustomQuiz] Finish
+04:01:01 [OnlineLoterry] No Winner
+04:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 130 Y: 192)
+04:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 83 Y: 99)
+04:48:00 [CustomQuiz] Start
+04:50:00 [Invasion Manager] Index(3) Boss Position (Map: 2 X: 165 Y: 20)
+04:51:00 [CustomQuiz] Finish
+04:58:04 [Obj][9000] AddClient (85.209.133.91)
+04:58:05 [Obj][9000] DelClient (85.209.133.91)
+05:01:01 [OnlineLoterry] No Winner
+05:48:00 [CustomQuiz] Start
+05:51:00 [CustomQuiz] Finish
+06:01:01 [OnlineLoterry] No Winner
+06:48:00 [CustomQuiz] Start
+06:50:00 [Invasion Manager] Index(7) Boss Position (Map: 3 X: 199 Y: 71)
+06:51:00 [CustomQuiz] Finish
+07:01:01 [OnlineLoterry] No Winner
+07:48:00 [CustomQuiz] Start
+07:51:00 [CustomQuiz] Finish
+08:01:01 [OnlineLoterry] No Winner
+08:05:00 [Invasion Manager] Index(0) Boss Position (Map: 0 X: 137 Y: 201)
+08:15:00 [Invasion Manager] Index(1) Boss Position (Map: 3 X: 114 Y: 154)
+08:48:00 [CustomQuiz] Start
+08:50:00 [Invasion Manager] Index(3) Boss Position (Map: 0 X: 157 Y: 60)
+08:51:00 [CustomQuiz] Finish
+09:01:01 [OnlineLoterry] No Winner
+09:48:00 [CustomQuiz] Start
+09:51:00 [CustomQuiz] Finish
+10:01:01 [OnlineLoterry] No Winner
+10:48:00 [CustomQuiz] Start
+10:50:00 [Invasion Manager] Index(7) Boss Position (Map: 2 X: 166 Y: 17)
+10:51:00 [CustomQuiz] Finish
+11:01:01 [OnlineLoterry] No Winner

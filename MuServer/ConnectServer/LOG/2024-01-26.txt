@@ -1,0 +1,42 @@
+17:44:39 [SocketManager] Server started at port [44405]
+17:44:39 [ServerList] ServerList loaded successfully
+17:44:41 [ServerList] JoinServer online
+17:44:44 [ServerList] GameServer online (GameServer) (0)
+17:58:07 [SocketManager] Server started at port [44405]
+17:58:07 [ServerList] ServerList loaded successfully
+17:58:09 [ServerList] JoinServer online
+17:58:12 [ServerList] GameServer online (GameServer) (0)
+18:05:16 [SocketManager] Server started at port [44405]
+18:05:16 [ServerList] ServerList loaded successfully
+18:05:18 [ServerList] JoinServer online
+18:05:21 [ServerList] GameServer online (GameServer) (0)
+18:10:59 [SocketManager] Server started at port [44405]
+18:10:59 [ServerList] ServerList loaded successfully
+18:11:01 [ServerList] JoinServer online
+18:11:04 [ServerList] GameServer online (GameServer) (0)
+18:41:46 [SocketManager] Server started at port [44405]
+18:41:46 [ServerList] ServerList loaded successfully
+18:41:48 [ServerList] JoinServer online
+18:41:50 [ServerList] GameServer online (GameServer) (0)
+18:58:14 [SocketManager] Server started at port [44405]
+18:58:14 [ServerList] ServerList loaded successfully
+18:58:16 [ServerList] JoinServer online
+18:58:18 [ServerList] GameServer online (GameServer) (0)
+19:48:58 [SocketManager] Server started at port [44405]
+19:48:58 [ServerList] ServerList loaded successfully
+19:49:00 [ServerList] JoinServer online
+19:49:02 [ServerList] GameServer online (GameServer) (0)
+20:51:02 [SocketManager] Server started at port [44405]
+20:51:02 [ServerList] ServerList loaded successfully
+20:51:04 [ServerList] JoinServer online
+20:51:07 [ServerList] GameServer online (GameServer) (0)
+23:09:23 [SocketManager] Server started at port [44405]
+23:09:23 [ServerList] ServerList loaded successfully
+23:09:25 [ServerList] JoinServer online
+23:14:33 [SocketManager] Server started at port [44405]
+23:14:33 [ServerList] ServerList loaded successfully
+23:14:35 [ServerList] JoinServer online
+23:25:18 [SocketManager] Server started at port [44405]
+23:25:18 [ServerList] ServerList loaded successfully
+23:25:20 [ServerList] JoinServer online
+23:25:23 [ServerList] GameServer online (GameServer) (0)

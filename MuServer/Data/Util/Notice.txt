@@ -1,0 +1,3 @@
+//Message                                                            Type   Count   Opacity   Delay   Red   Green   Blue   Speed   RepeatTime
+"经典怀旧复刻版"                                                  0      0       0         0       0     0       0      0       720
+end

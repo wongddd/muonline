@@ -1,0 +1,21 @@
+Could not initiate the EventLog Service for the key 'MSSQLSERVER', last error code is 2.
+2026-05-26 03:03:11.56 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:11.56 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:11.87 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:11.87 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:12.17 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:12.17 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:12.49 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:12.49 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:12.79 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:12.79 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:13.09 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:13.09 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:13.40 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:13.40 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:13.71 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:13.71 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:14.02 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:14.02 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).
+2026-05-26 03:03:14.34 Server      Error: 17058, Severity: 16, State: 1.
+2026-05-26 03:03:14.34 Server      initerrlog: Could not open error log file ''. Operating system error = 3(系统找不到指定的路径。).

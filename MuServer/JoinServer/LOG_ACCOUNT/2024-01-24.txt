@@ -1,0 +1,5 @@
+13:56:59 [AccountInfo] Account connected (Account: 0000, IpAddress: 14.155.107.187, GameServerCode: 0)
+14:04:41 [AccountInfo] Account connected (Account: 0000, IpAddress: 14.155.107.187, GameServerCode: 0)
+14:10:26 [AccountInfo] Account disconnected (Account: 0000, IpAddress: 14.155.107.187, GameServerCode: 0)
+14:10:56 [AccountInfo] Account connected (Account: 0000, IpAddress: 14.155.107.187, GameServerCode: 0)
+14:34:31 [AccountInfo] Account disconnected (Account: 0000, IpAddress: 14.155.107.187, GameServerCode: 0)

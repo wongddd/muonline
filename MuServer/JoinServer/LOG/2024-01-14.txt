@@ -1,0 +1,52 @@
+15:33:25 [SocketManager] Server started at port [55970]
+15:33:28 [ServerManager][0] AddServer (127.0.0.1)
+15:33:28 [ServerManager][0] ServerInfo (GameServer) (55901) (0)
+15:35:01 EXEC WZ_CONNECT_MEMB '123123','GameServer','14.155.91.134'
+15:35:01 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+15:38:36 EXEC WZ_DISCONNECT_MEMB '123123'
+15:38:36 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+15:40:50 [SocketManager] Server started at port [55970]
+15:40:56 [ServerManager][0] AddServer (127.0.0.1)
+15:40:56 [ServerManager][0] ServerInfo (GameServer) (55901) (0)
+15:41:09 EXEC WZ_CONNECT_MEMB '123123','GameServer','14.155.91.134'
+15:41:09 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+15:46:57 EXEC WZ_DISCONNECT_MEMB '123123'
+15:46:57 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+15:47:32 [ServerManager][0] DelServer (127.0.0.1)
+15:48:03 [ServerManager][0] AddServer (127.0.0.1)
+15:48:03 [ServerManager][0] ServerInfo (GameServer) (55901) (0)
+15:48:18 EXEC WZ_CONNECT_MEMB '123123','GameServer','14.155.91.134'
+15:48:18 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+15:49:41 EXEC WZ_DISCONNECT_MEMB '123123'
+15:49:41 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+16:39:44 EXEC WZ_CONNECT_MEMB '123123','GameServer','14.155.91.134'
+16:39:44 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+16:48:45 EXEC WZ_DISCONNECT_MEMB '123123'
+16:48:45 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+16:56:04 EXEC WZ_CONNECT_MEMB '123123','GameServer','14.155.91.134'
+16:56:04 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+16:57:03 EXEC WZ_DISCONNECT_MEMB '123123'
+16:57:03 [QueryManager] State (42000), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]无法解决 equal to 运算中 "Chinese_PRC_90_CS_AS" 和 "Latin1_General_CI_AS" 之间的排序规则冲突。
+16:57:10 [ServerManager][0] DelServer (127.0.0.1)
+17:02:31 [SocketManager] Server started at port [55970]
+17:02:36 [ServerManager][0] AddServer (127.0.0.1)
+17:02:36 [ServerManager][0] ServerInfo (GameServer) (55901) (0)
+17:02:45 EXEC WZ_DesblocAccount '123123'
+17:02:45 [QueryManager] State (42S22), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]列名 'bloc_expire' 无效。
+17:02:49 EXEC WZ_DesblocAccount '123123'
+17:02:49 [QueryManager] State (42S22), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]列名 'bloc_expire' 无效。
+17:03:25 EXEC WZ_DesblocAccount '123123'
+17:03:25 [QueryManager] State (42S22), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]列名 'bloc_expire' 无效。
+17:03:55 EXEC WZ_DesblocAccount '136001'
+17:03:55 [QueryManager] State (42S22), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]列名 'bloc_expire' 无效。
+17:03:58 EXEC WZ_DesblocAccount '136001'
+17:03:58 [QueryManager] State (42S22), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]列名 'bloc_expire' 无效。
+17:04:11 [ServerManager][0] DelServer (127.0.0.1)
+17:10:22 [SocketManager] Server started at port [55970]
+17:10:25 [ServerManager][0] AddServer (127.0.0.1)
+17:10:25 [ServerManager][0] ServerInfo (GameServer) (55901) (0)
+17:10:38 EXEC WZ_DesblocAccount '0000'
+17:10:38 [QueryManager] State (42S22), Diagnostic: [Microsoft][ODBC SQL Server Driver][SQL Server]列名 'bloc_expire' 无效。
+17:14:26 [SocketManager] Server started at port [55970]
+17:14:29 [ServerManager][0] AddServer (127.0.0.1)
+17:14:29 [ServerManager][0] ServerInfo (GameServer) (55901) (0)

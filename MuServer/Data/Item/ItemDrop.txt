@@ -1,0 +1,7 @@
+//Index   Level   Grade   Option0   Option1   Option2   Option3   Option4   Option5   Option6   Duration   MapNumber   MonsterClass   MonsterLevelMin   MonsterLevelMax   DropRate   Comment
+//	1等级	2卓越对应	3等级	4技能	5幸运	6追加	7卓越	8套装	
+//	9镶嵌	10消失时间	11掉落地图	12怪物代码	13怪物最低等级	1怪物最高等级	15物品爆率	16物品名称
+//编号	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15			
+
+
+end

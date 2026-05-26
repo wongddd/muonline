@@ -1,6 +1,6 @@
-# MU Online Private Server (Season 8 / EX502)
+# MU Online Private Server (Season 5 / EX502)
 
-基于 MU Online Season 8 (EX502) 的私服项目，包含完整的服务端和客户端源码。
+基于 MU Online Season 5 (EX502) 的私服项目，包含完整的服务端和客户端源码。
 
 ## 项目结构
 

@@ -1,0 +1,29 @@
+# Build artifacts
+*.obj
+*.exe
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.tlog/
+*.log
+*.idb
+*.ipdb
+*.iobj
+x64/
+x86/
+Global Debug/
+Global Release/
+Debug/
+Release/
+
+# Temp files
+*.zip
+*.7z
+*.rar
+*.tmp
+Client_original_tmp/
+
+# OS
+Thumbs.db
+.DS_Store

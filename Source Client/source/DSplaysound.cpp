@@ -11,6 +11,7 @@
 // Copyright (c) 1999 Microsoft Corp. All rights reserved.
 //-----------------------------------------------------------------------------
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include <objbase.h>
 //#include <initguid.h>
 #include <commdlg.h>
@@ -127,7 +128,7 @@ HRESULT InitDirectSound( HWND hDlg )
 		
 		// Release the primary buffer, since it is not need anymore
 
-        //  LPDIRECTSOUNDBUFFER �ʱ�ȭ.
+        //  LPDIRECTSOUNDBUFFER �ʱ�ȭ.
         for ( int i=0; i<MAX_BUFFER; ++i )
         {
             g_lpDSBuffer[i][0] = NULL;
@@ -201,9 +202,7 @@ HRESULT CreateStaticBuffer(int Buffer, TCHAR* strFileName, int MaxChannel , bool
 		if (FAILED(hr = g_lpDSBuffer[Buffer][0]->QueryInterface(IID_IDirectSound3DBuffer, (LPVOID *)&g_lpDS3DBuffer[Buffer][0])))
 		{
 			g_ErrorReport.Write( "Failed to query for 3D Interface on Direct Sound buffer [%s]\r\n", strFileName);
-			MessageBox(g_hWnd,"Failed to query for 3D Interface on Direct Sound buffer",NULL,MB_OK);
-		    g_ErrorReport.Write( "Failed to query for 3D Interface on Direct Sound buffer" );
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError("Failed to query for 3D Interface on Direct Sound buffer");
 			delete  wavefile;
 			return 0;
 		}
@@ -212,9 +211,7 @@ HRESULT CreateStaticBuffer(int Buffer, TCHAR* strFileName, int MaxChannel , bool
 		if (FAILED(hr = g_lpDS3DBuffer[Buffer][0]->SetPosition(-2,0,2,DS3D_IMMEDIATE)))
 		{
 			g_ErrorReport.Write( "Failed to set position of 3D buffer [%s]\r\n", strFileName);
-			MessageBox(g_hWnd,"Failed to set position of 3D buffer",NULL,MB_OK);
-		    g_ErrorReport.Write( "Failed to set position of 3D buffer" );
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError("Failed to set position of 3D buffer");
 			delete  wavefile;
 			return 0;
 		}
@@ -223,9 +220,7 @@ HRESULT CreateStaticBuffer(int Buffer, TCHAR* strFileName, int MaxChannel , bool
 		if( FAILED( hr = g_lpDS3DBuffer[Buffer][0]->QueryInterface( IID_IKsPropertySet, (void**)&g_lpPropertySet[Buffer])))
 		{
 			g_ErrorReport.Write( "Failed to get Property Set Interface [%s]\r\n", strFileName);
-			MessageBox(g_hWnd,"Failed to get Property Set Interface",NULL,MB_OK);
-		    g_ErrorReport.Write( "Failed to get Property Set Interface" );
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError("Failed to get Property Set Interface");
 			delete  wavefile;
 			return 0;
 		}
@@ -571,3 +566,5 @@ void Set3DSoundPosition()
 		}
 	}
 }
+
+

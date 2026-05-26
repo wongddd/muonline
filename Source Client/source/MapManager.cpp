@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "MapManager.h"
 #include "CameraMove.h"
 #include "CDirection.h"
@@ -554,7 +555,7 @@ void CMapManager::Load() // OK
 	case WD_41CHANGEUP3RD_1ST:
 		LoadBitmap("Effect\\clouds.jpg" , BITMAP_CLOUD, GL_LINEAR, GL_CLAMP_TO_EDGE);
 		LoadBitmap("Effect\\firered.jpg" , BITMAP_FIRE_RED, GL_LINEAR, GL_CLAMP_TO_EDGE);
-		LoadBitmap("Effect\\FireSnuff.jpg", BITMAP_FIRE_SNUFF, GL_LINEAR, GL_CLAMP_TO_EDGE);      //  ºÒ¾¾.
+		LoadBitmap("Effect\\FireSnuff.jpg", BITMAP_FIRE_SNUFF, GL_LINEAR, GL_CLAMP_TO_EDGE);      //  ï¿½Ò¾ï¿½.
 		
 		LoadWaveFile(SOUND_3RD_CHANGE_UP_BG_CAGE1,			"Data\\Sound\\w42\\cage01.wav", 1);
 		LoadWaveFile(SOUND_3RD_CHANGE_UP_BG_CAGE2,			"Data\\Sound\\w42\\cage02.wav", 1);
@@ -598,7 +599,7 @@ void CMapManager::Load() // OK
 			LoadBitmap("Logo\\MU-logo.tga"         ,BITMAP_LOG_IN+16, GL_LINEAR);
 			LoadBitmap("Logo\\MU-logo_g.jpg", BITMAP_LOG_IN+17, GL_LINEAR);
 
-			// ¸ó½ºÅÍ ¹Ì¸® ÀÐ¾î³õ±â
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½
 			OpenMonsterModel(129);
 			OpenMonsterModel(130);
 			OpenMonsterModel(131);
@@ -1306,8 +1307,7 @@ void CMapManager::LoadWorld(int Map)
    		sprintf(Text,"%s file corrupted.",FileName);
 		g_ErrorReport.Write( Text);
 		g_ErrorReport.Write( "\r\n");
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 
@@ -1373,8 +1373,7 @@ void CMapManager::LoadWorld(int Map)
    		sprintf(Text,"%s file corrupted.",FileName);
 		g_ErrorReport.Write( Text);
 		g_ErrorReport.Write( "\r\n");
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 
@@ -1387,8 +1386,7 @@ void CMapManager::LoadWorld(int Map)
    		sprintf(Text,"%s file corrupted.",FileName);
 		g_ErrorReport.Write( Text);
 		g_ErrorReport.Write( "\r\n");
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 
@@ -1882,3 +1880,4 @@ const char* CMapManager::GetMapName( int iMap)
 	}
 	return ( GlobalText[30+iMap] );
 }
+

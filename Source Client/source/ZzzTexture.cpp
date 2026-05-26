@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <setjmp.h>
 #include "ZzzTexture.h"
+#include "DebugSkip.h"
 #include "./Utilities/Log/ErrorReport.h"
 #include "WSclient.h"
 #include "DSPlaySound.h"
@@ -144,8 +145,7 @@ bool OpenJpegBuffer(char *filename,float *BufferFloat)
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
 		g_ErrorReport.Write( "\r\n");
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return false;
 	}
 

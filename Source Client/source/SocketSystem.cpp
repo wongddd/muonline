@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "SocketSystem.h"
 #include "./Utilities/Log/ErrorReport.h"
 #include "ZzzInventory.h"
@@ -266,7 +267,7 @@ int CSocketItemMgr::AttachToolTipForSocketItem(const ITEM* pItem, int iTextNum)
 		}
 		else
 		{
-			assert(!"¼ÒÄÏ ÀÎµ¦½º ¿¡·¯");
+			assert(!"ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		}
 
 		sprintf(TextList[iTextNum], GlobalText[2655], i + 1, szOptionText);
@@ -598,8 +599,7 @@ void CSocketItemMgr::OpenSocketItemScript(const unicode::t_char * szFileName)
 		unicode::t_char Text[256];
     	unicode::_sprintf(Text,"%s - File not exist.",szFileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 
@@ -622,3 +622,4 @@ void CSocketItemMgr::OpenSocketItemScript(const unicode::t_char * szFileName)
 		if (pbySetTest[0] + pbySetTest[1] + pbySetTest[2] + pbySetTest[3] + pbySetTest[4] + pbySetTest[5] == 0) break;
 	}
 }
+

@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include <gl\gl.h>
 #include <gl\glu.h>
 #include <math.h>
@@ -106,8 +107,7 @@ void InitTerrainMappingLayer()
 
 void ExitProgram()
 {
-	MessageBox(g_hWnd,GlobalText[11],NULL,MB_OK);
-	SendMessage(g_hWnd,WM_DESTROY,0,0);
+	FatalError(GlobalText[11]);
 }
 
 
@@ -128,8 +128,7 @@ int OpenTerrainAttribute(char *FileName)
    		sprintf(Text,"%s file not found.",FileName);
 		g_ErrorReport.Write( Text);
 		g_ErrorReport.Write( "\r\n");
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return ( -1);
 	}
 
@@ -641,8 +640,7 @@ bool OpenTerrainHeight(char *filename)
    		sprintf(Text,"%s file not found.",FileName);
 		g_ErrorReport.Write( Text);
 		g_ErrorReport.Write( "\r\n");
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return false;
 	}
 	fseek(fp,4,SEEK_SET);
@@ -2746,5 +2744,7 @@ void RenderSky()
 	}
 	EndSprite();
 }
+
+
 
 

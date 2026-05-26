@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "stdafx.h"
 #include "ZzzOpenglUtil.h"
 #include "ZzzTexture.h"
@@ -29,8 +30,7 @@ ItemAddOptioninfo::ItemAddOptioninfo()
 		char szMessage[256];
 		::sprintf(szMessage, "%s file not found.\r\n", ITEMADDOPTION_DATA_FILE);
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 	}
 }
 
@@ -100,3 +100,5 @@ void ItemAddOptioninfo::GetItemAddOtioninfoText( std::vector<std::string>& outte
 		outtextlist.push_back( text );
 	}
 }
+
+

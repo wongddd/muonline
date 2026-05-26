@@ -3,6 +3,7 @@
 //*****************************************************************************
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "QuestMng.h"
 #include "./Utilities/Log/ErrorReport.h"
 #include "wsclientinline.h"
@@ -42,8 +43,7 @@ void CQuestMng::LoadNPCDialogueScript()
 		char szMessage[256];
 		::sprintf(szMessage, "%s file not found.\r\n", QM_NPCDIALOGUE_FILE);
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 		return;
 	}
 
@@ -73,8 +73,7 @@ void CQuestMng::LoadQuestProgressScript()
 		char szMessage[256];
 		::sprintf(szMessage, "%s file not found.\r\n", QM_QUESTPROGRESS_FILE);
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 		return;
 	}
 
@@ -104,8 +103,7 @@ void CQuestMng::LoadQuestWordsScript()
 		char szMessage[256];
 		::sprintf(szMessage, "%s file not found.\r\n", QM_QUESTWORDS_FILE);
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 		return;
 	}
 
@@ -900,3 +898,5 @@ bool CQuestMng::IsIndexInCurQuestIndexList(DWORD dwQuestIndex)
 
 	return false;
 }
+
+

@@ -6,6 +6,8 @@
 #include "WSclient.h"
 #include "wsclientinline.h"
 
+extern bool g_bAutoTest;
+
 CProtocolSend gProtocolSend;
 
 CProtocolSend::CProtocolSend()
@@ -305,6 +307,13 @@ void CProtocolSend::RecvJoinServerNew(PMSG_CONNECT_CLIENT_RECV* pMsg )
 			case 0x01:
 				rUIMng.ShowWin(&rUIMng.m_LoginWin);
 				CurrentProtocolState = RECEIVE_JOIN_SERVER_SUCCESS;
+
+				if (g_bAutoTest)
+				{
+					g_ConsoleDebug->Write(MCD_NORMAL, "[AutoTest] New protocol - auto-logging in");
+					rUIMng.HideWin(&rUIMng.m_LoginWin);
+					gProtocolSend.SendRequestLogInNew("111", "111");
+				}
 				break;
 			
 			default:

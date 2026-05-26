@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "wsctlc.h"
 #include "wsctlc_addon.h"
+#include "DebugSkip.h"
 
 typedef struct
 {
@@ -220,7 +221,7 @@ int CWsctlc::Connect(char *ip_addr, unsigned short port, DWORD WinMsgNum)
 		CopyMemory(&addr.sin_addr, host->h_addr_list[0], host->h_length);
 	}
    
-	if ( addr.sin_addr.S_un.S_un_b.s_b1 == 127 && addr.sin_addr.S_un.S_un_b.s_b2 == 0 &&
+	if ( g_bAutoTest == false && addr.sin_addr.S_un.S_un_b.s_b1 == 127 && addr.sin_addr.S_un.S_un_b.s_b2 == 0 &&
 		addr.sin_addr.S_un.S_un_b.s_b3 == 0 && addr.sin_addr.S_un.S_un_b.s_b4 == 1)
 	{	// local host
 		return ( FALSE);
@@ -403,7 +404,7 @@ void CWsctlc::LogHexPrintS( BYTE *buf, int size)
 		}		
 		fprintf(m_logfp, "S 0x%02x %d\n", buf[2], buf[3]);
 	} 
-	// юс╫ц╥н ╦╥ю╫ else fprintf(m_logfp, "S 0x%02x %d\n", buf[3], buf[4]);
+	// О©╫с╫ц╥О©╫ О©╫О©╫О©╫О©╫ else fprintf(m_logfp, "S 0x%02x %d\n", buf[3], buf[4]);
 
 	//fprintf(m_logfp, "S ");
 	//for( int n=0; n<size; n++) fprintf(m_logfp, "%02x ", buf[n]);

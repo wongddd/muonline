@@ -34,6 +34,9 @@ Client_original_tmp/
 *.VC.db
 *.VC.VC.opendb
 
+# Encoder build artifacts
+Source Tools/Encoder/ipch/
+
 # OS
 Thumbs.db
 .DS_Store

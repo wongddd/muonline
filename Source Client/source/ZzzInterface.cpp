@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+ï»¿///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
@@ -281,7 +281,7 @@ void SetIME_Status (bool halfShape)
 	
     data = ::ImmGetContext( g_hWnd );
 	
-    //  ¹Ý°¢.
+    //  ï¿½Ý°ï¿½.
     dwConv = g_dwOldConv;
     dwSent = g_dwOldSent;
     if( halfShape )
@@ -443,8 +443,8 @@ void RenderTipText(int sx, int sy, const char* Text)
 	int BackupAlphaBlendType = AlphaBlendType;
 	EnableAlphaTest();
 	glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
-	RenderColor ((float)sx - 2, (float)sy - 3, (float)TextSize.cx / g_fScreenRate_x + 4, (float)1);	// À§
-	RenderColor ((float)sx - 2, (float)sy - 3, (float)1, (float)TextSize.cy / g_fScreenRate_y + 4);	// ÁÂ
+	RenderColor ((float)sx - 2, (float)sy - 3, (float)TextSize.cx / g_fScreenRate_x + 4, (float)1);	// ï¿½ï¿½
+	RenderColor ((float)sx - 2, (float)sy - 3, (float)1, (float)TextSize.cy / g_fScreenRate_y + 4);	// ï¿½ï¿½
 	RenderColor ((float)sx - 2 + TextSize.cx / g_fScreenRate_x + 3, (float)sy - 3, (float)1, (float)TextSize.cy / g_fScreenRate_y + 4);	
 	RenderColor ((float)sx - 2, (float)sy - 3 + TextSize.cy / g_fScreenRate_y + 3, (float)TextSize.cx / g_fScreenRate_x + 4, (float)1);
 	
@@ -742,7 +742,7 @@ void SetBooleanPosition(CHAT *c)
 	SIZE Size[5];
 	memset(&Size[0], 0, sizeof(SIZE)*5);
 	
-	if ( g_isCharacterBuff((&c->Owner->Object), eBuff_GMEffect) || // GM ÀÏ°æ¿ì
+		if ( g_isCharacterBuff((&c->Owner->Object), eBuff_GMEffect) || 
 			(c->Owner->CtlCode == CTLCODE_20OPERATOR) || (c->Owner->CtlCode == CTLCODE_08OPERATOR))	
 		{
 			g_pRenderText->SetFont(g_hFontBold);
@@ -801,7 +801,7 @@ void SetPlayerColor(BYTE PK)
 	}
 }
 
-extern float g_fScreenRate_x;	// ¡Ø
+extern float g_fScreenRate_x;	// ï¿½ï¿½
 extern float g_fScreenRate_y;
 const int ciSystemColor = 240;
 
@@ -1532,7 +1532,7 @@ bool CheckAttack_Fenrir(CHARACTER* c)
 				
 		}
 				
-		if( c->GuildRelationShip == GR_RIVAL || c->GuildRelationShip == GR_RIVALUNION )		//¹ÚÁ¾ÈÆ Ç¥½Ã
+		if( c->GuildRelationShip == GR_RIVAL || c->GuildRelationShip == GR_RIVALUNION )		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 		{
 			return true;
 		}
@@ -4473,12 +4473,12 @@ void CheckChatText(char *Text)
 		SetActionClass(c,o,PLAYER_AWKWARD1,AT_AWKWARD1);
 		SendRequestAction(AT_AWKWARD1,((BYTE)((o->Angle[2]+22.5f)/360.f*8.f+1.f)%8));
 	}
-	else if(FindText(Text,"¤Ð.¤Ð") || FindText(Text,"¤Ì.¤Ì") || FindText(Text,"T_T") || FindText(Text,GlobalText[306]) || FindText(Text,GlobalText[307]) || FindText(Text,GlobalText[308]) || FindText(Text,GlobalText[309]))
+	else if(FindText(Text,"ï¿½ï¿½.ï¿½ï¿½") || FindText(Text,"ï¿½ï¿½.ï¿½ï¿½") || FindText(Text,"T_T") || FindText(Text,GlobalText[306]) || FindText(Text,GlobalText[307]) || FindText(Text,GlobalText[308]) || FindText(Text,GlobalText[309]))
 	{
 		SetActionClass(c,o,PLAYER_CRY1,AT_CRY1);
 		SendRequestAction(AT_CRY1,((BYTE)((o->Angle[2]+22.5f)/360.f*8.f+1.f)%8));
 	}
-	else if(FindText(Text,"¤Ñ.¤Ñ") || FindText(Text,"¤Ñ.,¤Ñ") || FindText(Text,"¤Ñ,.¤Ñ") || FindText(Text,"-.-") || FindText(Text,"-_-") || FindText(Text,GlobalText[310]) || FindText(Text,GlobalText[311]))
+	else if(FindText(Text,"ï¿½ï¿½.ï¿½ï¿½") || FindText(Text,"ï¿½ï¿½.,ï¿½ï¿½") || FindText(Text,"ï¿½ï¿½,.ï¿½ï¿½") || FindText(Text,"-.-") || FindText(Text,"-_-") || FindText(Text,GlobalText[310]) || FindText(Text,GlobalText[311]))
 	{
 		SetActionClass(c,o,PLAYER_SEE1,AT_SEE1);
 		SendRequestAction(AT_SEE1,((BYTE)((o->Angle[2]+22.5f)/360.f*8.f+1.f)%8));
@@ -4518,7 +4518,7 @@ void CheckChatText(char *Text)
 		SetActionClass(c,o,PLAYER_RESPECT1,AT_RESPECT1);
 		SendRequestAction(AT_RESPECT1,((BYTE)((o->Angle[2]+22.5f)/360.f*8.f+1.f)%8));
 	}
-	else if(FindText(Text,GlobalText[342]) || FindText(Text,GlobalText[343]) || FindText(Text,"/¤Ñ") || FindText(Text,"¤Ñ^"))
+	else if(FindText(Text,GlobalText[342]) || FindText(Text,GlobalText[343]) || FindText(Text,"/ï¿½ï¿½") || FindText(Text,"ï¿½ï¿½^"))
 	{
 		SetActionClass(c,o,PLAYER_SALUTE1,AT_SALUTE1);
 		SendRequestAction(AT_SALUTE1,((BYTE)((o->Angle[2]+22.5f)/360.f*8.f+1.f)%8));
@@ -7742,7 +7742,7 @@ int SelectCharacter(BYTE Kind)
 					continue;
 				}
 				
-				if ( c->m_bIsSelected==false ) 
+				if ( c->m_bIsSelected==false && Main )
 				{
 					continue;
 				}

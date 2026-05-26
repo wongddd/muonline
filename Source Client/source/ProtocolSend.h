@@ -20,6 +20,8 @@ enum class ProtocolHead : uint16_t
 	BOTH_ATTACK2,
 	BOTH_ATTACK3,
 
+	BOTH_CONNECT_JOIN_GAME,
+
 	BOTH_MESSAGE,
 };
 

@@ -4523,8 +4523,17 @@ void OpenImages()
 
 void OpenSounds()
 {
+	extern bool g_bAutoTest;
+	if (g_bAutoTest)
+	{
+		g_ErrorReport.Write("[OpenSounds] auto-test mode, skipping sound loading\n");
+		return;
+	}
+	extern bool g_EnableSound;
+	g_ErrorReport.Write("[OpenSounds] enter\n");
 	bool Enable3DSound = true;
 
+	g_ErrorReport.Write("[OpenSounds] loading SOUND_WIND01 (g_EnableSound=%d)\n", g_EnableSound);
     LoadWaveFile(SOUND_WIND01			,"Data\\Sound\\aWind.wav",1);
     LoadWaveFile(SOUND_RAIN01			,"Data\\Sound\\aRain.wav",1);
     LoadWaveFile(SOUND_DUNGEON01		,"Data\\Sound\\aDungeon.wav",1);
@@ -4749,6 +4758,7 @@ void OpenSounds()
 	LoadWaveFile(SOUND_RAGESKILL_BUFF_1, "Data\\Sound\\Ragefighter\\Rage_Buff_1.wav");
 	LoadWaveFile(SOUND_RAGESKILL_BUFF_2, "Data\\Sound\\Ragefighter\\Rage_Buff_2.wav");
 #endif //PBG_ADD_NEWCHAR_MONK
+	g_ErrorReport.Write("[OpenSounds] exit\n");
 }
 
 extern int	g_iRenderTextType;
@@ -4945,9 +4955,13 @@ void ReleaseCharacterSceneData()
 
 void OpenBasicData(HDC hDC)
 {
+	g_ErrorReport.Write("[OpenBasicData] Enter function\n");
+
 	CUIMng& rUIMng = CUIMng::Instance();
+	g_ErrorReport.Write("[OpenBasicData] Got CUIMng instance\n");
 
 	rUIMng.RenderTitleSceneUI(hDC, 0, 11);
+	g_ErrorReport.Write("[OpenBasicData] RenderTitleSceneUI done\n");
 
 	LoadBitmap("Interface\\Cursor.tga"           ,BITMAP_CURSOR  ,GL_LINEAR,GL_CLAMP_TO_EDGE);
 	LoadBitmap("Interface\\CursorPush.tga"       ,BITMAP_CURSOR+1,GL_LINEAR,GL_CLAMP_TO_EDGE);
@@ -5377,32 +5391,48 @@ void OpenBasicData(HDC hDC)
 
 	g_ErrorReport.Write( "> First Load Files OK.\r\n");
 
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayers enter\n");
 	OpenPlayers();
-
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayers done\n");
 
 	rUIMng.RenderTitleSceneUI(hDC, 2, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayerTextures enter\n");
     OpenPlayerTextures();
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayerTextures done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 3, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenItems enter\n");
     OpenItems();
+	g_ErrorReport.Write("[OpenBasicData] OpenItems done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 4, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenItemTextures enter\n");
     OpenItemTextures();
+	g_ErrorReport.Write("[OpenBasicData] OpenItemTextures done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 5, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenSkills enter\n");
     OpenSkills();
+	g_ErrorReport.Write("[OpenBasicData] OpenSkills done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 6, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenImages enter\n");
 	OpenImages();
+	g_ErrorReport.Write("[OpenBasicData] OpenImages done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 7, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenSounds enter\n");
     OpenSounds();
+	g_ErrorReport.Write("[OpenBasicData] OpenSounds done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 8, 11);
+	g_ErrorReport.Write("[OpenBasicData] RenderTitleSceneUI 8 done\n");
 
 	char Text[100];
 
+	g_ErrorReport.Write("[OpenBasicData] g_strSelectedML=[%s]\n", g_strSelectedML.c_str());
 	g_ServerListManager->LoadServerListScript();
+	g_ErrorReport.Write("[OpenBasicData] LoadServerListScript done\n");
 
 	sprintf(Text, "Data\\Local\\%s\\Dialog_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
 	OpenDialogFile(Text);

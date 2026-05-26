@@ -1211,21 +1211,29 @@ void CMapManager::Load() // OK
 
 void CMapManager::LoadWorld(int Map)
 {
+	g_ErrorReport.Write("[AutoTest] LoadWorld: step 1 - Map=%d, WorldActive=%d\r\n", Map, this->WorldActive);
 	if(Map == 32 && this->WorldActive == 32)
 	{
 		Map = this->WorldActive = 9;
 	}
 
+	g_ErrorReport.Write("[AutoTest] LoadWorld: DeleteObjects\r\n");
 	this->DeleteObjects();
+	g_ErrorReport.Write("[AutoTest] LoadWorld: DeleteNpcs\r\n");
 	DeleteNpcs();
+	g_ErrorReport.Write("[AutoTest] LoadWorld: DeleteMonsters\r\n");
 	DeleteMonsters();
+	g_ErrorReport.Write("[AutoTest] LoadWorld: SceneFlag=%d\r\n", SceneFlag);
 	if(SceneFlag != CHARACTER_SCENE)
 	{
+		g_ErrorReport.Write("[AutoTest] LoadWorld: ClearItems\r\n");
 		ClearItems();
+		g_ErrorReport.Write("[AutoTest] LoadWorld: ClearCharacters\r\n");
 		ClearCharacters(HeroKey);
 	}
 	RemoveAllShopTitleExceptHero();
 
+	g_ErrorReport.Write("[AutoTest] LoadWorld: Direction init\r\n");
 	g_Direction.Init();
 	g_Direction.HeroFallingDownInit();
 	g_Direction.DeleteMonster();
@@ -1234,8 +1242,10 @@ void CMapManager::LoadWorld(int Map)
 	g_Direction.m_CKanturu.m_iMayaState = 0;
 	g_Direction.m_CKanturu.m_iNightmareState = 0;
 
-    this->Load();
+	g_ErrorReport.Write("[AutoTest] LoadWorld: this->Load()\r\n");
+	this->Load();
 
+	g_ErrorReport.Write("[AutoTest] LoadWorld: terrain prep\r\n");
 	char FileName[64];
 	char WorldName[32];
     int  iMapWorld = this->WorldActive+1;
@@ -1299,7 +1309,9 @@ void CMapManager::LoadWorld(int Map)
 		}
 	}
 
+	g_ErrorReport.Write("[AutoTest] LoadWorld: OpenTerrainMapping enter\r\n");
 	int iResult = OpenTerrainMapping ( FileName );
+	g_ErrorReport.Write("[AutoTest] LoadWorld: OpenTerrainMapping(%s)=%d\r\n", FileName, iResult);
 
 	if ( iMapWorld != iResult && -1 != iResult)
 	{

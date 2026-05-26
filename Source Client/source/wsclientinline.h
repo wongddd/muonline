@@ -300,17 +300,29 @@ extern char Question[31];
 #define SendRequestJoinMapServer( p_ID)\
 {\
 	CurrentProtocolState = REQUEST_JOIN_MAP_SERVER;\
-	CStreamPacketEngine spe;\
-	spe.Init( 0xC1, 0xF3);\
-	spe << ( BYTE)0x03;\
-	spe.AddData( ( p_ID), strlen( ( p_ID)));\
-	spe.AddNullData( MAX_ID_SIZE - strlen( ( p_ID)));\
-	spe.Send();\
+	char nameBuf[10] = {0};\
+	int nameLen = (int)strlen((p_ID));\
+	if (nameLen > 10) nameLen = 10;\
+	if (nameLen > 0) memcpy(nameBuf, (p_ID), nameLen);\
+	gProtocolSend.SendPacket(ProtocolHead::BOTH_CONNECT_JOIN_GAME, (uint8_t*)nameBuf, sizeof(nameBuf));\
 }
 
 extern BOOL g_bWhileMovingZone;
 extern DWORD g_dwLatestZoneMoving;
 
+#ifdef NEW_PROTOCOL_SYSTEM
+#define SendRequestFinishLoading()\
+{\
+	BYTE packet[4];\
+	packet[0] = 0xC1;\
+	packet[1] = sizeof(packet);\
+	packet[2] = 0xF3;\
+	packet[3] = 0x12;\
+	gProtocolSend.SendPacketClassic(packet, sizeof(packet));\
+	g_dwLatestZoneMoving = GetTickCount();\
+	g_bWhileMovingZone = FALSE;\
+}
+#else
 #define SendRequestFinishLoading()\
 {\
 	CStreamPacketEngine spe;\
@@ -321,6 +333,7 @@ extern DWORD g_dwLatestZoneMoving;
 	g_dwLatestZoneMoving = GetTickCount();\
 	g_bWhileMovingZone = FALSE;\
 }
+#endif
 
 extern int  ChatTime;
 extern char ChatText[256];

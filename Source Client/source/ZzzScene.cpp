@@ -1962,7 +1962,7 @@ void MoveMainScene()
 		g_ConsoleDebug->Write(MCD_NORMAL, "MainScene Init Success");
 	}
 	
-	if(CurrentProtocolState == RECEIVE_JOIN_MAP_SERVER)
+	if(CurrentProtocolState == RECEIVE_JOIN_MAP_SERVER && EnableMainRender == false)
 	{
 		EnableMainRender = true;
 		SendRequestFinishLoading();

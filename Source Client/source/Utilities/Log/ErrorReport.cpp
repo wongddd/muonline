@@ -81,7 +81,7 @@ void CErrorReport::Create( char *lpszFileName)
 {
 	strcpy( m_lpszFileName, lpszFileName);
 
-	//DeleteFile( m_lpszFileName);
+	DeleteFile( m_lpszFileName);
 	m_iKey = 0;
 	m_hFile = CreateFile( m_lpszFileName, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_ALWAYS,FILE_ATTRIBUTE_NORMAL, NULL);
 

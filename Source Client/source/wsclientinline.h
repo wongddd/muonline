@@ -161,35 +161,53 @@ extern int FirstTime;
 extern BOOL g_bGameServerConnected;
 
 __forceinline void SendCheck( void)
-{	
+{
 	if ( !g_bGameServerConnected)
 	{
 		return;
 	}
 
-	//gProtocolSend.SendPingTest();
+	gProtocolSend.SendPingTest();
 
 	g_ConsoleDebug->Write(MCD_SEND, "SendCheck");
 
-	CStreamPacketEngine spe;
-	spe.Init( 0xC1, 0x0E);
+	BYTE cBuff[256];
+	cBuff[0] = 0xC1;
+	cBuff[2] = 0x0E;
+
 	DWORD dwTick = GetTickCount();
-	spe.AddNullData( 1);
-	spe << dwTick;
+	int iSize = 3;
+
+	cBuff[iSize++] = 0;
+
+	*(DWORD*)&cBuff[iSize] = dwTick;
+	iSize += sizeof(DWORD);
 
 	if(CharacterAttribute->Ability & ABILITY_FAST_ATTACK_SPEED)
 	{
-		spe << ( WORD)( CharacterAttribute->AttackSpeed-20) << ( WORD)( CharacterAttribute->MagicSpeed-20);
+		*(WORD*)&cBuff[iSize] = CharacterAttribute->AttackSpeed - 20;
+		iSize += sizeof(WORD);
+		*(WORD*)&cBuff[iSize] = CharacterAttribute->MagicSpeed - 20;
+		iSize += sizeof(WORD);
 	}
 	else if(CharacterAttribute->Ability & ABILITY_FAST_ATTACK_SPEED2)
 	{
-		spe << ( WORD)( CharacterAttribute->AttackSpeed-20) << ( WORD)( CharacterAttribute->MagicSpeed-20);
+		*(WORD*)&cBuff[iSize] = CharacterAttribute->AttackSpeed - 20;
+		iSize += sizeof(WORD);
+		*(WORD*)&cBuff[iSize] = CharacterAttribute->MagicSpeed - 20;
+		iSize += sizeof(WORD);
 	}
 	else
 	{
-		spe << ( WORD)( CharacterAttribute->AttackSpeed) << ( WORD)( CharacterAttribute->MagicSpeed);
+		*(WORD*)&cBuff[iSize] = CharacterAttribute->AttackSpeed;
+		iSize += sizeof(WORD);
+		*(WORD*)&cBuff[iSize] = CharacterAttribute->MagicSpeed;
+		iSize += sizeof(WORD);
 	}
-	spe.Send( TRUE);
+
+	cBuff[1] = iSize;
+
+	SendPacket((char*)cBuff, iSize, TRUE);
 
 	if(!First)
 	{
@@ -200,11 +218,15 @@ __forceinline void SendCheck( void)
 
 #define SendCheckSum( dwCheckSum)\
 {\
-	CStreamPacketEngine spe;\
-	spe.Init( 0xC1, 0x03);\
-	spe.AddNullData( 1);\
-	spe << ( DWORD)( dwCheckSum);\
-	spe.Send( TRUE);\
+	BYTE cBuff[256];\
+	cBuff[0] = 0xC1;\
+	cBuff[2] = 0x03;\
+	int iSize = 3;\
+	cBuff[iSize++] = 0;\
+	*(DWORD*)&cBuff[iSize] = (DWORD)(dwCheckSum);\
+	iSize += sizeof(DWORD);\
+	cBuff[1] = iSize;\
+	SendPacket((char*)cBuff, iSize, TRUE);\
 }
 
 #define SendHackingChecked( byType, byParam)\

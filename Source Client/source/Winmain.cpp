@@ -606,6 +606,10 @@ LONG FAR PASCAL WndProc(HWND hwnd,UINT msg,WPARAM wParam,LPARAM lParam)
 			SocketClient.FDWriteSend();
 			break;
 		case FD_CLOSE :
+	#ifdef NEW_PROTOCOL_SYSTEM
+			if (SocketClient.GetSocket() == INVALID_SOCKET)
+				break;
+	#endif
 			g_pChatListBox->AddText("", GlobalText[3], SEASON3B::TYPE_SYSTEM_MESSAGE);
 #ifdef CONSOLE_DEBUG
 			switch(WSAGETSELECTERROR(lParam))
@@ -1833,4 +1837,6 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 
     return msg.wParam;
 }
+
+
 

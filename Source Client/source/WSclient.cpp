@@ -201,7 +201,9 @@ BOOL CreateSocket(char *IpAddr, unsigned short Port)
 void DeleteSocket()
 {
 	SocketClient.Close();
-	//gProtocolSend.DisconnectServer();
+	#ifdef NEW_PROTOCOL_SYSTEM
+		gProtocolSend.DisconnectServer();
+	#endif
 }
 
 static BYTE bBuxCode[3] = {0xfc,0xcf,0xab};

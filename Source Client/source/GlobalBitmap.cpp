@@ -404,15 +404,33 @@ bool CGlobalBitmap::LoadImage(GLuint uiBitmapIndex, const std::string& filename,
 	std::string ext;
 	SplitExt(filename, ext, false);
 
+	// Helper: try loading with a different extension
+	auto tryFallbackExt = [&](const char* newExt) -> bool {
+		std::string fallback = filename.substr(0, filename.length() - ext.length()) + newExt;
+		g_ErrorReport.Write("[AutoMatch] trying %s -> %s\n", filename.c_str(), fallback.c_str());
+		if (0 == _stricmp(newExt, "jpg")) {
+			return OpenJpeg(uiBitmapIndex, fallback, uiFilter, uiWrapMode);
+		} else if (0 == _stricmp(newExt, "tga")) {
+			return OpenTga(uiBitmapIndex, fallback, uiFilter, uiWrapMode);
+		}
+		return false;
+	};
+
 	if(0 == _stricmp(ext.c_str(), "jpg"))
 	{
 		if (OpenJpeg(uiBitmapIndex, filename, uiFilter, uiWrapMode))
+			return true;
+		// try .tga fallback
+		if (tryFallbackExt("tga"))
 			return true;
 		return CreateFallbackTexture(uiBitmapIndex, filename);
 	}
 	else if(0 == _stricmp(ext.c_str(), "tga"))
 	{
 		if (OpenTga(uiBitmapIndex, filename, uiFilter, uiWrapMode))
+			return true;
+		// try .jpg fallback
+		if (tryFallbackExt("jpg"))
 			return true;
 		return CreateFallbackTexture(uiBitmapIndex, filename);
 	}

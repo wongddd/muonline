@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 
 #include "NewUIMiniMap.h"
 #include "NewUISystem.h"
@@ -47,7 +48,7 @@ bool SEASON3B::CNewUIMiniMap::Create(CNewUIManager* pNewUIMng, int x, int y)
 
 	m_BtnExit.ChangeButtonImgState( true, IMAGE_MINIMAP_INTERFACE + 6, false );
 	m_BtnExit.ChangeButtonInfo( m_Pos.x+610, 3, 85, 85 );		
-	m_BtnExit.ChangeToolTipText( GlobalText[1002], true );	// 1002 "´Ý±â"
+	m_BtnExit.ChangeToolTipText( GlobalText[1002], true );	// 1002 "ï¿½Ý±ï¿½"
 
 	SetPos(x, y);
 
@@ -251,8 +252,7 @@ void SEASON3B::CNewUIMiniMap::LoadImages(const char* Filename)
 			char Text[256];
     		sprintf(Text,"%s - File corrupted.",Fname);
 			g_ErrorReport.Write( Text);
-			MessageBox(g_hWnd,Text,NULL,MB_OK);
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError(Text);
 		}
 		else
 		{
@@ -349,3 +349,5 @@ bool SEASON3B::CNewUIMiniMap::Check_Btn(int mx,int my)
 	}
 	return false;
 }
+
+

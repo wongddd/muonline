@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "ReadScript.h"
 #include "UIManager.h"
 #include "ItemAddOptioninfo.h"
@@ -105,8 +106,7 @@ bool BuffScriptLoader::Load(const std::string& pchFileName)
 			char Text[256];
     		sprintf( Text, "Erro interno.", pchFileName );
 			g_ErrorReport.Write( Text );
-			MessageBox(g_hWnd,Text,NULL,MB_OK);
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError(Text);
 		}
 		else
 		{
@@ -143,8 +143,7 @@ bool BuffScriptLoader::Load(const std::string& pchFileName)
 		char Text[256];
     	sprintf( Text, "Erro Interno.", pchFileName );
 		g_ErrorReport.Write( Text );
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 
 	return true;
@@ -219,3 +218,5 @@ int BuffScriptLoader::GetBuffType(int iItemCode)
 	return -1;
 }
 #endif // KJH_PBG_ADD_INGAMESHOP_SYSTEM
+
+

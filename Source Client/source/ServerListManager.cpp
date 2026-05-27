@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "ServerListManager.h"
 #include "./Utilities/Log/ErrorReport.h"
 
@@ -53,8 +54,7 @@ void CServerListManager::LoadServerListScript()
 		char szMessage[256];
 		::sprintf(szMessage, "Data\\Local\\ServerList.bmd file not found.\r\n");
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 		return;
 	}
 	
@@ -303,3 +303,6 @@ int CServerListManager::GetTotalServer()
 {
 	return m_iTotalServer;
 }
+
+
+

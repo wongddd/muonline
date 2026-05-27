@@ -6,6 +6,7 @@
 #include "GlobalBitmap.h"
 #include "ZzzBMD.h"
 #include "ZzzTexture.h"
+#include "DebugSkip.h"
 
 CLoadData gLoadData;
 
@@ -38,8 +39,7 @@ void CLoadData::AccessModel(int Type,char *Dir,char *FileName,int i)
     {
 		char Text[256];
     	sprintf(Text,"%s file does not exist.",Name );
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
     }
 }
 

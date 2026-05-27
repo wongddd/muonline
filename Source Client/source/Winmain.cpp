@@ -537,7 +537,7 @@ LONG FAR PASCAL WndProc(HWND hwnd,UINT msg,WPARAM wParam,LPARAM lParam)
 #ifdef ACTIVE_FOCUS_OUT
 			if (g_bUseWindowMode == FALSE)
 #endif	// ACTIVE_FOCUS_OUT
-				g_bWndActive = false;
+				g_bWndActive = true;
 #if defined USER_WINDOW_MODE || (defined WINDOWMODE)
 			if (g_bUseWindowMode == TRUE)
 			{
@@ -606,6 +606,10 @@ LONG FAR PASCAL WndProc(HWND hwnd,UINT msg,WPARAM wParam,LPARAM lParam)
 			SocketClient.FDWriteSend();
 			break;
 		case FD_CLOSE :
+	#ifdef NEW_PROTOCOL_SYSTEM
+			if (SocketClient.GetSocket() == INVALID_SOCKET)
+				break;
+	#endif
 			g_pChatListBox->AddText("", GlobalText[3], SEASON3B::TYPE_SYSTEM_MESSAGE);
 #ifdef CONSOLE_DEBUG
 			switch(WSAGETSELECTERROR(lParam))
@@ -1713,8 +1717,41 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 		g_bAutoTest = true;
 		g_ErrorReport.Write("> AUTO TEST MODE ENABLED\r\n");
 
+		// Force localhost for auto-test (override Main.info IP and command-line parse)
+		extern char* szServerIpAddress;
+		extern WORD g_ServerPort;
+		sprintf(szServerIpAddress, "127.0.0.1");
+		g_ServerPort = 44405;
+		g_ErrorReport.Write("[AutoTest] Force IP: 127.0.0.1:%d\r\n", g_ServerPort);
+
+		// Load all game data (Models, Items, Skills, Sounds, etc.) before creating scene
+		g_ErrorReport.Write("[AutoTest] Loading game data...\r\n");
+
+		// Initialize title scene UI (needed by OpenBasicData's RenderTitleSceneUI calls)
+		LoadBitmap("Interface\\New_lo_back_01.jpg", BITMAP_TITLE, GL_LINEAR);
+		LoadBitmap("Interface\\New_lo_back_02.jpg", BITMAP_TITLE+1, GL_LINEAR);
+		LoadBitmap("Interface\\MU_TITLE.tga", BITMAP_TITLE+2, GL_LINEAR);
+		LoadBitmap("Interface\\lo_121518.tga", BITMAP_TITLE+3, GL_LINEAR);
+		LoadBitmap("Interface\\New_lo_webzen_logo.tga", BITMAP_TITLE+4, GL_LINEAR);
+		LoadBitmap("Interface\\lo_lo.jpg", BITMAP_TITLE+5, GL_LINEAR, GL_REPEAT);
+		LoadBitmap("Interface\\lo_back_s5_03.jpg", BITMAP_TITLE+6, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_s5_04.jpg", BITMAP_TITLE+7, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_im01.jpg", BITMAP_TITLE+8, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_im02.jpg", BITMAP_TITLE+9, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_im03.jpg", BITMAP_TITLE+10, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_im04.jpg", BITMAP_TITLE+11, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_im05.jpg", BITMAP_TITLE+12, GL_LINEAR);
+		LoadBitmap("Interface\\lo_back_im06.jpg", BITMAP_TITLE+13, GL_LINEAR);
+		CUIMng::Instance().CreateTitleSceneUI();
+
+		OpenBasicData(g_hDC);
+
 		CreateLogInScene();
-		g_bWndActive = false;
+		extern int SceneFlag;
+		extern bool InitLogIn;
+		SceneFlag = 2; // LOG_IN_SCENE
+		InitLogIn = true;
+		//g_bWndActive = false;
 	}
 
     while( 1 )
@@ -1776,7 +1813,18 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 			ProtocolCompiler();
 
 		g_pChatRoomSocketList->ProtocolCompile();
-		gProtocolSend.RecvMessage();
+		if (g_bAutoTest)
+	{
+		static DWORD dwLastLog = 0;
+		DWORD dwNow = GetTickCount();
+		if (dwNow - dwLastLog > 3000)
+		{
+			dwLastLog = dwNow;
+			g_ErrorReport.Write("[MainLoop] SceneFlag=%d, GameServerConnected=%d\n",
+				SceneFlag, g_bGameServerConnected);
+		}
+	}
+	gProtocolSend.RecvMessage();
 	#else
 		ProtocolCompiler();
 		g_pChatRoomSocketList->ProtocolCompile();
@@ -1789,4 +1837,6 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 
     return msg.wParam;
 }
+
+
 

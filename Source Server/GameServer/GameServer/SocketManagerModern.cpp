@@ -116,8 +116,18 @@ void CSocketManagerModern::DataReceived(uint16_t aIndex,olc::net::message<Protoc
 		case ProtocolHead::BOTH_ATTACK1: 
 			gAttack.CGAttackRecv((PMSG_ATTACK_RECV*)msg.body.data(),aIndex);
 			break;
-		case ProtocolHead::BOTH_ATTACK2: 
+		case ProtocolHead::BOTH_ATTACK2:
 			gSkillManager.CGMultiSkillAttackRecv((PMSG_MULTI_SKILL_ATTACK_RECV*)msg.body.data(),aIndex,0);
+			break;
+		case ProtocolHead::BOTH_CONNECT_JOIN_GAME:
+			{
+				PMSG_CHARACTER_INFO_RECV pMsg;
+				pMsg.header.set(0xF3, 0x03, sizeof(pMsg));
+				memset(pMsg.name, 0, sizeof(pMsg.name));
+				uint16_t copySize = (msg.body.size() < sizeof(pMsg.name)) ? msg.body.size() : sizeof(pMsg.name);
+				memcpy(pMsg.name, msg.body.data(), copySize);
+				CGCharacterInfoRecv(&pMsg, aIndex);
+			}
 			break;
 		case ProtocolHead::BOTH_MESSAGE:
 			{

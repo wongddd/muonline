@@ -70,6 +70,9 @@ void CSMServer::ConnectChangeMapServer(MServerInfo sInfo)
 
     if ( m_bFillServerInfo && LogIn!=0 )
     {
+#ifdef NEW_PROTOCOL_SYSTEM
+        g_bGameServerConnected = TRUE;
+#else
 		DeleteSocket ();
         SaveOptions();
 		SaveMacro("Data\\Macro.txt");
@@ -80,6 +83,7 @@ void CSMServer::ConnectChangeMapServer(MServerInfo sInfo)
         {
             g_bGameServerConnected = TRUE;
         }
+#endif
     }
 }
 

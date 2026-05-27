@@ -1,4 +1,4 @@
-// GlobalBitmap.cpp: implementation of the CGlobalBitmap class.
+﻿// GlobalBitmap.cpp: implementation of the CGlobalBitmap class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -404,15 +404,70 @@ bool CGlobalBitmap::LoadImage(GLuint uiBitmapIndex, const std::string& filename,
 	std::string ext;
 	SplitExt(filename, ext, false);
 
+	// Helper: try loading with a different extension
+	auto tryFallbackExt = [&](const char* newExt) -> bool {
+		std::string fallback = filename.substr(0, filename.length() - ext.length()) + newExt;
+		g_ErrorReport.Write("[AutoMatch] trying %s -> %s\n", filename.c_str(), fallback.c_str());
+		if (0 == _stricmp(newExt, "jpg")) {
+			return OpenJpeg(uiBitmapIndex, fallback, uiFilter, uiWrapMode);
+		} else if (0 == _stricmp(newExt, "tga")) {
+			return OpenTga(uiBitmapIndex, fallback, uiFilter, uiWrapMode);
+		}
+	return false;
+	};
+	// Cross-directory search
+	auto tryCrossDir = [&](const char* origExt) -> bool {
+		if (filename.find("Data\\") != 0) return false;
+		std::string relative = filename.substr(5);
+		size_t slashPos = relative.find('\\');
+		if (slashPos == std::string::npos) return false;
+		std::string originalDir = relative.substr(0, slashPos);
+		std::string filePart = relative.substr(slashPos + 1);
+		const char* searchDirs[] = {
+			"Skill", "Effect", "Item", "Interface",
+			"Player", "Monster", "NPC", "Character"
+		};
+		for (const char* dir : searchDirs) {
+			if (0 == _stricmp(dir, originalDir.c_str())) continue;
+			std::string newPath = "Data\\" + std::string(dir) + "\\" + filePart;
+			g_ErrorReport.Write("[CrossDir] trying %s\n", newPath.c_str());
+			bool found = false;
+			if (0 == _stricmp(origExt, "jpg"))
+				found = OpenJpeg(uiBitmapIndex, newPath, uiFilter, uiWrapMode);
+			else
+				found = OpenTga(uiBitmapIndex, newPath, uiFilter, uiWrapMode);
+			if (found) return true;
+			// Also try swapped extension
+			std::string swappedExt = (0 == _stricmp(origExt, "jpg")) ? ".tga" : ".jpg";
+			std::string swapped = newPath.substr(0, newPath.length() - (strlen(origExt) + 1)) + swappedExt;
+			if (0 == _stricmp(origExt, "jpg"))
+				found = OpenTga(uiBitmapIndex, swapped, uiFilter, uiWrapMode);
+			else
+				found = OpenJpeg(uiBitmapIndex, swapped, uiFilter, uiWrapMode);
+			if (found) return true;
+		}
+		return false;
+	};
+
 	if(0 == _stricmp(ext.c_str(), "jpg"))
 	{
 		if (OpenJpeg(uiBitmapIndex, filename, uiFilter, uiWrapMode))
+			return true;
+		// try .tga fallback
+		if (tryFallbackExt("tga"))
+			return true;
+		if (tryCrossDir("jpg"))
 			return true;
 		return CreateFallbackTexture(uiBitmapIndex, filename);
 	}
 	else if(0 == _stricmp(ext.c_str(), "tga"))
 	{
 		if (OpenTga(uiBitmapIndex, filename, uiFilter, uiWrapMode))
+			return true;
+		// try .jpg fallback
+		if (tryFallbackExt("jpg"))
+			return true;
+		if (tryCrossDir("tga"))
 			return true;
 		return CreateFallbackTexture(uiBitmapIndex, filename);
 	}

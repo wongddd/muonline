@@ -2,6 +2,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "ZzzInfomation.h"
 #include "ZzzBMD.h"
 #include "ZzzObject.h"
@@ -76,8 +77,7 @@ void OpenFilterFile(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 
@@ -115,8 +115,7 @@ void OpenNameFilterFile(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 	int Size = 20;
@@ -132,8 +131,7 @@ void OpenNameFilterFile(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File corrupted.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 	else
 	{
@@ -178,8 +176,7 @@ void OpenGateScript(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 }
 
@@ -215,8 +212,7 @@ void OpenMonsterSkillScript(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 }
 
@@ -227,8 +223,7 @@ void OpenNpcScript(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 	SMDToken Token;
@@ -255,7 +250,7 @@ void OpenSkillScript(char *FileName)
 	if(fp != NULL)
 	{
 		int Size = sizeof(SKILL_ATTRIBUTE);
-		// ÀÐ±â
+		// ï¿½Ð±ï¿½
 		BYTE *Buffer = new BYTE [Size*MAX_SKILLS];
 		fread(Buffer,Size*MAX_SKILLS,1,fp);
 		// crc Ã¼Å©
@@ -267,8 +262,7 @@ void OpenSkillScript(char *FileName)
 			char Text[256];
     		sprintf(Text,"%s - File corrupted.",FileName);
 			g_ErrorReport.Write( Text);
-			MessageBox(g_hWnd,Text,NULL,MB_OK);
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError(Text);
 		}
 		else
 		{
@@ -289,8 +283,7 @@ void OpenSkillScript(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 }
 
@@ -356,8 +349,7 @@ void OpenDialogFile(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		return;
 	}
 	int Size = sizeof ( DIALOG_SCRIPT);
@@ -400,8 +392,7 @@ void OpenItemScript(char *FileName)
 			char Text[256];
     		sprintf(Text,"%s - File corrupted.",FileName);
 			g_ErrorReport.Write( Text);
-			MessageBox(g_hWnd,Text,NULL,MB_OK);
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError(Text);
 		}
 		else
 		{
@@ -420,16 +411,15 @@ void OpenItemScript(char *FileName)
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 }
 
 void PrintItem(char *FileName)
 {
 	FILE *fp = fopen(FileName,"wt");
-    fprintf(fp,"                ÀÌ¸§  ÃÖ¼Ò°ø°Ý·Â ÃÖ´ë°ø°Ý·Â ¹æ¾î·Â ¹æ¾îÀ² ÇÊ¿äÈû ÇÊ¿ä¹ÎÃ¸ ÇÊ¿ä¿¡³ÊÁö\n");
-	//fprintf(fp,"                ÀÌ¸§    Ä«¿À½º¼º°øÈ®·ü\n");
+    fprintf(fp,"                ï¿½Ì¸ï¿½  ï¿½Ö¼Ò°ï¿½ï¿½Ý·ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½Ý·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ã¸ ï¿½Ê¿ä¿¡ï¿½ï¿½ï¿½ï¿½\n");
+	//fprintf(fp,"                ï¿½Ì¸ï¿½    Ä«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È®ï¿½ï¿½\n");
 	bool Excellent = true;
 	for(int i=0;i<16*MAX_ITEM_INDEX;i++)
 	{
@@ -2080,7 +2070,7 @@ int ItemValue(ITEM *ip,int goldType)
 #ifdef PBG_ADD_NEWCHAR_MONK_ITEM
 					|| (ip->Type>=ITEM_WING+49 && ip->Type<=ITEM_WING+50)
 #endif //PBG_ADD_NEWCHAR_MONK_ITEM
-					)    //  ³¯°³.
+					)    //  ï¿½ï¿½ï¿½ï¿½.
                 {
 					int iOption = ip->SpecialValue[i];
 					if ( AT_LIFE_REGENERATION == ip->Special[i])
@@ -2492,7 +2482,7 @@ void OpenMonsterScript(char *FileName)
 	SMDToken Token;
 	while(true)
 	{
-		Token = (*GetToken)();//¹øÈ£
+		Token = (*GetToken)();//ï¿½ï¿½È£
 		if(Token == END) break;
 		if(Token == NAME && strcmp("end",TokenString)==NULL) break;
         MONSTER_SCRIPT *m = &MonsterScript[EditMonsterNumber++];
@@ -2555,7 +2545,7 @@ void CreateClassAttributes()
 	CreateClassAttribute( 4, 30, 30, 30, 30,	 120, 80,	  1, 1, 2, 2 );
 	CreateClassAttribute( 5, 50, 50, 50, 30,	 110, 30,	 110, 30, 6, 3 );
 #ifdef PBG_ADD_NEWCHAR_MONK
-	CreateClassAttribute( 6, 32, 27, 25, 20,	 100, 40,	 /*»ç¿ë¾ÈÇÔ => */1, 3, 1, 1);
+	CreateClassAttribute( 6, 32, 27, 25, 20,	 100, 40,	 /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ => */1, 3, 1, 1);
 #endif //PBG_ADD_NEWCHAR_MONK
 }
 
@@ -2941,7 +2931,7 @@ void CHARACTER_MACHINE::CalculateDamage()
 	Character.AttackDamageMaxRight += g_SocketItemMgr.m_StatusBonus.m_iAttackDamageMaxBonus;
 	Character.AttackDamageMinLeft  += g_SocketItemMgr.m_StatusBonus.m_iAttackDamageMinBonus;
 	Character.AttackDamageMaxLeft  += g_SocketItemMgr.m_StatusBonus.m_iAttackDamageMaxBonus;
-	if(g_isCharacterBuff((&Hero->Object), eBuff_BlessingOfXmax))	//Å©¸®½º¸¶½ºÀÇ Ãàº¹
+	if(g_isCharacterBuff((&Hero->Object), eBuff_BlessingOfXmax))	//Å©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àº¹
 	{
 		int _Temp = 0;
 		_Temp = Character.Level / 3 +45;
@@ -2952,7 +2942,7 @@ void CHARACTER_MACHINE::CalculateDamage()
 		Character.AttackDamageMaxLeft += _Temp;
 	}
 
-	if(g_isCharacterBuff((&Hero->Object), eBuff_StrengthOfSanta))	//»êÅ¸ÀÇ °­È­
+	if(g_isCharacterBuff((&Hero->Object), eBuff_StrengthOfSanta))	//ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½È­
 	{
 		int _Temp = 30;
 		
@@ -2993,7 +2983,7 @@ void CHARACTER_MACHINE::CalculateMagicDamage()
     WORD    DamageMin = 0;
     WORD    DamageMax = 0;
 
-	// ³¯°³
+	// ï¿½ï¿½ï¿½ï¿½
     if ( Equipment[EQUIPMENT_WING].Type!=-1)
     {
         ITEM_ATTRIBUTE *p = &ItemAttribute[Equipment[EQUIPMENT_WING].Type];
@@ -3530,7 +3520,7 @@ void CHARACTER_MACHINE::CalculateAttackSpeed()
 		
 		Character.AttackSpeed += _Temp;
 		Character.MagicSpeed += _Temp;
-		//Character.AttackSpeed += Amulet->WeaponSpeed;	// ¼­¹ö¿¡¼­ ³Ñ¾î¿À´Â °ª? ÃßÈÄ È®ÀÎ»çÇ×.
+		//Character.AttackSpeed += Amulet->WeaponSpeed;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½? ï¿½ï¿½ï¿½ï¿½ È®ï¿½Î»ï¿½ï¿½ï¿½.
 		//Character.MagicSpeed += Amulet->WeaponSpeed;
 	}
 	
@@ -4044,5 +4034,7 @@ void CHARACTER_MACHINE::CalculateAll()
 	else
 		FinalSuccessDefense = false;
 }
+
+
 
 

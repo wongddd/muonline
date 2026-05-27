@@ -139,8 +139,7 @@
       <OutputFile>.\tmp/Global_Debug/Main.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy /Y "$(OutDir)$(TargetName)$(TargetExt)" "\\tsclient\D\alen4\Client\Main.exe"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Global Release|Win32'">
@@ -203,8 +202,7 @@
       <OutputFile>.\tmp/Global_Release/Main.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy /Y "$(OutDir)$(TargetName)$(TargetExt)" "\\tsclient\D\alen4\Client\Main.exe"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Global Release|x64'">

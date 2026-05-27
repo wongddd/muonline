@@ -1,6 +1,7 @@
 // UIRefinery.cpp: implementation of the UIRefinery class.
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "ZzzOpenglUtil.h"
 #include "ZzzTexture.h"
 #include "UIManager.h"
@@ -75,8 +76,7 @@ JewelHarmonyInfo::JewelHarmonyInfo()
 		char szMessage[256];
 		::sprintf(szMessage, "%s file not found.\r\n", "JewelOfHarmonyOption.bmd && JewelOfHarmonySmelt.bmd");
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 	}
 }
 
@@ -275,3 +275,5 @@ void JewelHarmonyInfo::GetStrengthenCapability( StrengthenCapability* pitemSC, c
 		}
 	}
 }
+
+

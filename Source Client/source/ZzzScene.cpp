@@ -266,8 +266,8 @@ bool CheckAbuseNameFilter(char *Text)
 bool CheckName()
 {
     if( CheckAbuseNameFilter(InputText[0]) || CheckAbuseFilter(InputText[0]) ||
-		FindText(InputText[0]," ") || FindText(InputText[0],"¡¡") ||
-		FindText(InputText[0],".") || FindText(InputText[0],"¡¤") || FindText(InputText[0],"¡­") ||
+		FindText(InputText[0]," ") || FindText(InputText[0],"ï¿½ï¿½") ||
+		FindText(InputText[0],".") || FindText(InputText[0],"ï¿½ï¿½") || FindText(InputText[0],"ï¿½ï¿½") ||
 		FindText(InputText[0],"Webzen") || FindText(InputText[0],"WebZen") || FindText(InputText[0],"webzen") ||  FindText(InputText[0],"WEBZEN") ||
 		FindText(InputText[0],GlobalText[457]) || FindText(InputText[0],GlobalText[458]))
 		return true;
@@ -862,7 +862,10 @@ void StartGame()
 			CharacterAttribute->Skin  = CharactersClient[SelectedHero].Skin;
 			::strcpy(CharacterAttribute->Name, CharactersClient[SelectedHero].ID);
 
-			::ReleaseCharacterSceneData();
+			::g_ErrorReport.Write("[StartGame] before ReleaseCharacterSceneData, Name=%s\n", CharacterAttribute->Name);
+	ReleaseCharacterSceneData();
+	g_ErrorReport.Write("[StartGame] after ReleaseCharacterSceneData\n");
+			g_ErrorReport.Write("[StartGame] InitLoading=false, before SceneFlag=LOADING_SCENE\n");
 			InitLoading = false;
 			SceneFlag = LOADING_SCENE;
 		}
@@ -1113,7 +1116,22 @@ bool NewRenderCharacterScene(HDC hDC)
 	RenderCharactersClient();
 
 	if(!CUIMng::Instance().IsCursorOnUI())
+	{
 		SelectObjects();
+
+		// Character scene: allow clicking on character models to select them
+		if (SceneFlag == CHARACTER_SCENE && MouseLButtonPush
+			&& SEASON3B::CheckMouseIn(0, 0, GetScreenWidth(), 429))
+		{
+			int idx = SelectCharacter(KIND_PLAYER);
+			if (idx >= 0 && idx < 5)
+			{
+				SelectedCharacter = idx;
+				SelectedHero = idx;
+				CUIMng::Instance().m_CharSelMainWin.UpdateDisplay();
+			}
+		}
+	}
 
 	RenderBugs();
 	RenderBlurs();
@@ -1172,21 +1190,30 @@ bool NewRenderCharacterScene(HDC hDC)
 
 void CreateLogInScene()
 {
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: start\r\n");
 	EnableMainRender = true;
 #ifdef PJH_NEW_SERVER_SELECT_MAP
 	gMapManager.WorldActive = WD_73NEW_LOGIN_SCENE;
 #else
 	World = WD_77NEW_LOGIN_SCENE;
 #endif //PJH_NEW_SERVER_SELECT_MAP
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: LoadWorld enter\r\n");
 	gMapManager.LoadWorld(gMapManager.WorldActive);
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: LoadWorld done\r\n");
 
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: OpenLogoSceneData enter\r\n");
 	OpenLogoSceneData();
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: OpenLogoSceneData done\r\n");
 
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: CreateLoginScene enter\r\n");
 	CUIMng::Instance().CreateLoginScene();
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: CreateLoginScene done\r\n");
 
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: CreateSocket enter\r\n");
 	CurrentProtocolState = REQUEST_JOIN_SERVER;
     CreateSocket(szServerIpAddress,g_ServerPort);
     EnableSocket = true;
+	g_ErrorReport.Write("[AutoTest] CreateLogInScene: CreateSocket done\r\n");
 
 	GuildInputEnable = false;
 	TabInputEnable   = false;
@@ -1378,7 +1405,7 @@ bool NewRenderLogInScene(HDC hDC)
 	if (CCameraMove::GetInstancePtr()->IsTourMode())
 	{
 #ifndef PJH_NEW_SERVER_SELECT_MAP
-		// È­¸é Èå¸®±â
+		// È­ï¿½ï¿½ ï¿½å¸®ï¿½ï¿½
 		EnableAlphaBlend4();
 		glColor4f(0.7f,0.7f,0.7f,1.0f);
 		float fScale = (sinf(WorldTime*0.0005f) + 1.f) * 0.00011f;
@@ -1390,17 +1417,17 @@ bool NewRenderLogInScene(HDC hDC)
 		fScale = (sinf(WorldTime*0.0015f) + 1.f) * 0.00021f;
 		RenderBitmapLocalRotate(BITMAP_CHROME+4,320.0f,240.0f, 1150.0f, 1150.0f, fAngle, fScale*512.f,fScale*512.f, (512.f)/512.f-fScale*2*512.f,(512.f)/512.f-fScale*2*512.f);
 
-		// À§¾Æ·¡ ÀÚ¸£±â
+		// ï¿½ï¿½ï¿½Æ·ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½
 		EnableAlphaTest();
 		glColor4f(0.0f,0.0f,0.0f,1.0f);
 		RenderColor(0, 0, 640, 25);
 		RenderColor(0, 480-25, 640, 25);
 
-		// È­¸éÄ¥
+		// È­ï¿½ï¿½Ä¥
 		glColor4f(0.0f,0.0f,0.0f,0.2f);
 		RenderColor(0, 25, 640, 430);
 #endif //PJH_NEW_SERVER_SELECT_MAP
-		// ¹Â·Î°í
+		// ï¿½Â·Î°ï¿½
 		g_fMULogoAlpha += 0.02f;
 		if (g_fMULogoAlpha > 10.0f) g_fMULogoAlpha = 10.0f;
 		
@@ -1485,6 +1512,8 @@ void RenderInterfaceEdge()
 
 void LoadingScene(HDC hDC)
 {
+	extern bool g_bAutoTest;
+	if (g_bAutoTest) g_ErrorReport.Write("[LoadingScene] enter, InitLoading=%d, SceneFlag=%d, m_pLoadingScene=%p\n", InitLoading, SceneFlag, CUIMng::Instance().m_pLoadingScene);
 	g_ConsoleDebug->Write(MCD_NORMAL, "LoadingScene_Start");
 
 	CUIMng& rUIMng = CUIMng::Instance();
@@ -1510,21 +1539,27 @@ void LoadingScene(HDC hDC)
 	::glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	::BeginBitmap();
 
-	rUIMng.m_pLoadingScene->Render();
+		g_ErrorReport.Write("[LoadingScene] calling Render, m_pLoadingScene=%p\n", rUIMng.m_pLoadingScene);
+rUIMng.m_pLoadingScene->Render();
+	g_ErrorReport.Write("[LoadingScene] after Render\n");
 
 	::EndBitmap();
 	::EndOpengl();
 	::glFlush();
 	::SwapBuffers(hDC);
 
-	SAFE_DELETE(rUIMng.m_pLoadingScene);
+		g_ErrorReport.Write("[LoadingScene] before SAFE_DELETE\n");
+SAFE_DELETE(rUIMng.m_pLoadingScene);
+	g_ErrorReport.Write("[LoadingScene] after SAFE_DELETE\n");
 
+	g_ErrorReport.Write("[LoadingScene] before SceneFlag=MAIN_SCENE\n");
 	SceneFlag = MAIN_SCENE;
 	for (int i = 0; i < 4; ++i)
 		::DeleteBitmap(BITMAP_TITLE+i);
 
 	::ClearInput();
 
+	g_ErrorReport.Write("[LoadingScene] end, SceneFlag=%d\n", SceneFlag);
 	g_ConsoleDebug->Write(MCD_NORMAL, "LoadingScene_End");
 }
 
@@ -1856,10 +1891,12 @@ bool MoveMainCamera()
 
 void MoveMainScene()
 {
-	if(!InitMainScene)
+		if(!InitMainScene)
 	{
-		g_pMainFrame->ResetSkillHotKey();
-		
+		extern bool g_bAutoTest;
+		g_ErrorReport.Write("[MoveMainScene] InitMainScene=%d, SelectedHero=%d, Name=%s\n", InitMainScene, SelectedHero, CharactersClient[SelectedHero].ID);
+		if (g_bAutoTest) g_ErrorReport.Write("[MoveMainScene] InitMainScene=%d\n", InitMainScene);
+
 		g_ConsoleDebug->Write( MCD_NORMAL, "Join the game with the following character: %s", CharactersClient[SelectedHero].ID);
 
 		g_ErrorReport.Write( "> Character selected <%d> \"%s\"\r\n", SelectedHero+1, CharactersClient[SelectedHero].ID);
@@ -1870,7 +1907,11 @@ void MoveMainScene()
 
 	    SendRequestJoinMapServer(CharactersClient[SelectedHero].ID);
 
+			g_ErrorReport.Write("[MoveMainScene] step1: after SendJoin\n");
+
 		CUIMng::Instance().CreateMainScene();
+
+			g_ErrorReport.Write("[MoveMainScene] step2: after CreateMainScene\n");
 
 		CameraAngle[2] = -45.f;
 
@@ -1880,22 +1921,33 @@ void MoveMainScene()
 		InputTextWidth  = 256;
 		InputTextMax[0] = 42;
 		InputTextMax[1] = 10;
+			g_ErrorReport.Write("[MoveMainScene] step3: before ChatListBox\n");
 		InputNumber     = 2;
-		for(int i=0;i<MAX_WHISPER;i++)
+		if (!g_bAutoTest)
 		{
-			g_pChatListBox->AddText("", "", SEASON3B::TYPE_WHISPER_MESSAGE);
+			for(int i=0;i<MAX_WHISPER;i++)
+			{
+				g_pChatListBox->AddText("", "", SEASON3B::TYPE_WHISPER_MESSAGE);
+			}
 		}
+			g_ErrorReport.Write("[MoveMainScene] step4: after ChatListBox\n");
 
 		g_GuildNotice[0][0] = '\0';
 		g_GuildNotice[1][0] = '\0';
-	
+
 		g_pPartyManager->Create();
 
-		g_pChatListBox->ClearAll();
-
-		g_pSlideHelpMgr->Init();		
-		g_pUIMapName->Init();
-
+		if (!g_bAutoTest)
+		{
+			g_ErrorReport.Write("[MoveMainScene] step5: before SlideHelp\n");
+			g_pChatListBox->ClearAll();
+			g_pSlideHelpMgr->Init();
+			g_pUIMapName->Init();
+		}
+		else
+		{
+			g_ErrorReport.Write("[MoveMainScene] step5: auto-test skipping CNewUISystem calls\n");
+		}
 		g_GuildCache.Reset();
 
 		g_PortalMgr.Reset();
@@ -1910,9 +1962,10 @@ void MoveMainScene()
 		g_ConsoleDebug->Write(MCD_NORMAL, "MainScene Init Success");
 	}
 	
-	if(CurrentProtocolState == RECEIVE_JOIN_MAP_SERVER)
+	if(CurrentProtocolState == RECEIVE_JOIN_MAP_SERVER && EnableMainRender == false)
 	{
 		EnableMainRender = true;
+		SendRequestFinishLoading();
 	}
 	if(EnableMainRender == false)
 	{

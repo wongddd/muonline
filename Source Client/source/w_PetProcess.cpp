@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "w_PetActionStand.h"
 #include "w_PetActionRound.h"
 #include "w_PetActionDemon.h"
@@ -195,8 +196,7 @@ bool PetProcess::LoadData()
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 
 		return FALSE;
 	}
@@ -227,8 +227,7 @@ bool PetProcess::LoadData()
 		char Text[256];
     	sprintf(Text,"%s - File corrupted.",FileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		
 		return FALSE;
 	}
@@ -383,3 +382,5 @@ void PetProcess::RenderPets()
  		}
  	}
 }
+
+

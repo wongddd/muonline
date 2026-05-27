@@ -201,7 +201,9 @@ BOOL CreateSocket(char *IpAddr, unsigned short Port)
 void DeleteSocket()
 {
 	SocketClient.Close();
-	//gProtocolSend.DisconnectServer();
+	#ifdef NEW_PROTOCOL_SYSTEM
+		gProtocolSend.DisconnectServer();
+	#endif
 }
 
 static BYTE bBuxCode[3] = {0xfc,0xcf,0xab};
@@ -346,10 +348,12 @@ void ReceiveServerList( BYTE *ReceiveBuffer )
 }
 void ReceiveServerConnect(BYTE* ReceiveBuffer) //Recebe informa��o do ConnectServer sobre a sala e envia a conex�o para a sala escolhida
 {
+	g_ErrorReport.Write("[RSC] step 1: enter\n");
 	LPPRECEIVE_SERVER_ADDRESS Data = (LPPRECEIVE_SERVER_ADDRESS)ReceiveBuffer;
 	char IP[16];
 	memset(IP, 0, 16);
 	memcpy(IP, (char*)Data->IP, 15);
+	g_ErrorReport.Write("[RSC] step 2: IP=%s Port=%d\n", IP, Data->Port);
 	g_ErrorReport.Write("[ReceiveServerConnect]");
 	SocketClient.Close();
 
@@ -360,11 +364,17 @@ void ReceiveServerConnect(BYTE* ReceiveBuffer) //Recebe informa��o do Connec
 	}
 #else
 	gProtocolSend.DisconnectServer();
+	g_ErrorReport.Write("[RSC] step 4: after DisconnectServer\n");
 
 	if (gProtocolSend.ConnectServer(IP,Data->Port))
 	{
 		g_bGameServerConnected = TRUE;
 		g_ConsoleDebug->Write(MCD_NORMAL, " > ProtocolSend Connect");
+		g_ErrorReport.Write("[RSC] step 5: Connect OK\n");
+	}
+	else
+	{
+		g_ErrorReport.Write("[RSC] step 5: Connect FAILED\n");
 	}
 #endif
 	
@@ -564,6 +574,29 @@ void ReceiveCharacterList( BYTE *ReceiveBuffer )
 		Offset += sizeof(PRECEIVE_CHARACTER_LIST);
 	}
 	CurrentProtocolState = RECEIVE_CHARACTERS_LIST;
+		if (g_bAutoTest && Data->Value > 0)
+		{
+			static bool s_bAutoGameStarted = false;
+			if (s_bAutoGameStarted)
+			{
+				g_ErrorReport.Write("[AutoTest] ignoring duplicate character list, StartGame already called\n");
+			}
+			else
+			{
+				s_bAutoGameStarted = true;
+				int Offset2 = sizeof(PHEADER_DEFAULT_CHARACTER_LIST);
+				LPPRECEIVE_CHARACTER_LIST Data2 = (LPPRECEIVE_CHARACTER_LIST)(ReceiveBuffer + Offset2);
+
+				SelectedHero = Data2->Index;
+
+				g_ConsoleDebug->Write(MCD_NORMAL, "[AutoTest] Auto-selecting character: %s\r\n", (char*)Data2->ID);
+				g_ErrorReport.Write("[AutoTest] Auto-selecting character: %s\r\n", (char*)Data2->ID);
+
+				g_ErrorReport.Write("[AutoTest] calling StartGame, SceneFlag before=%d\n", SceneFlag);
+				::StartGame();
+				g_ErrorReport.Write("[AutoTest] StartGame returned, SceneFlag after=%d\n", SceneFlag);
+			}
+		}
 }
 CHARACTER_ENABLE g_CharCardEnable;
 

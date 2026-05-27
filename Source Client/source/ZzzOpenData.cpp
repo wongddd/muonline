@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "UIControls.h"
 #include "ZzzOpenglUtil.h"
 #include "ZzzBMD.h"
@@ -116,8 +117,7 @@ void OpenPlayers()
 	if(Models[MODEL_PLAYER].NumMeshs > 0)
 	{
 		g_ErrorReport.Write( "Player.bmd file error.\r\n");
-		MessageBox(g_hWnd,"Player.bmd file error!!!",NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError("Player.bmd file error!!!");
 	}
 
 	for (int i = 0; i < MAX_CLASS; ++i)
@@ -255,7 +255,7 @@ void OpenPlayers()
 		gLoadData.AccessModel( MODEL_BOOTS +34+i, "Data\\Player\\", "CW_BootMale",i+1);
 	}
 
-	//¸¶°Ë»ç´Â Á¦¿ÜÇÏ°í Åõ±¸µµ Ãß°¡
+	//ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	gLoadData.AccessModel( MODEL_HELM +34, "Data\\Player\\", "CW_HelmMale", 1);
 	gLoadData.AccessModel( MODEL_HELM +35, "Data\\Player\\", "CW_HelmMale", 2);
 	gLoadData.AccessModel( MODEL_HELM +36, "Data\\Player\\", "CW_HelmMale", 3);
@@ -1962,7 +1962,7 @@ void OpenNpc(int Type)
         gLoadData.OpenTexture(Type,"Npc\\");
 		break;
 
-    //  µ¥ºñ¾Æ½º, ·Î·£½Ã¾Æ Ãß°¡ »óÁ¡ NPC
+    //  ï¿½ï¿½ï¿½ï¿½Æ½ï¿½, ï¿½Î·ï¿½ï¿½Ã¾ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ NPC
 	case MODEL_DEVIAS_TRADER:
 		gLoadData.AccessModel( MODEL_DEVIAS_TRADER, "Data\\Npc\\", "DeviasTrader", 1);
 		gLoadData.OpenTexture(Type, "Npc\\");
@@ -1974,12 +1974,12 @@ void OpenNpc(int Type)
 		gLoadData.OpenTexture ( MODEL_ANGEL, "Npc\\" );
 		break;
 #endif	// _PVP_ATTACK_GUARD
-    case MODEL_NPC_BREEDER:    //  Á¶·Ã»ç NPC.
+    case MODEL_NPC_BREEDER:    //  ï¿½ï¿½ï¿½Ã»ï¿½ NPC.
         gLoadData.AccessModel ( MODEL_NPC_BREEDER, "Data\\Npc\\", "Breeder" );
         gLoadData.OpenTexture ( MODEL_NPC_BREEDER, "Npc\\" );
         break;
 #ifdef _PVP_MURDERER_HERO_ITEM
-	case MODEL_HERO_SHOP:	// ¿µ¿õ »óÁ¡
+	case MODEL_HERO_SHOP:	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         gLoadData.AccessModel ( MODEL_HERO_SHOP, "Data\\Npc\\", "HeroNpc" );
         gLoadData.OpenTexture ( MODEL_HERO_SHOP, "Npc\\" );
 		break;
@@ -2243,7 +2243,7 @@ void OpenNpc(int Type)
 		gLoadData.OpenTexture(MODEL_UNITEDMARKETPLACE_JULIA, "Npc\\");
 		break;
 #ifdef ASG_ADD_KARUTAN_NPC
-	case MODEL_KARUTAN_NPC_REINA:	// ·Î·£½ÃÀå NPC ÀâÈ­»óÀÎ Å©¸®½ºÆ¾°ú µ¿ÀÏ.
+	case MODEL_KARUTAN_NPC_REINA:	// ï¿½Î·ï¿½ï¿½ï¿½ï¿½ï¿½ NPC ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		gLoadData.AccessModel(MODEL_KARUTAN_NPC_REINA, "Data\\Npc\\", "UnitedMarketPlace_christine");
 		gLoadData.OpenTexture(MODEL_KARUTAN_NPC_REINA, "Npc\\");
 		break;
@@ -3452,7 +3452,7 @@ void OpenMonsterModel(int Type)
 		SetMonsterSound(MODEL_MONSTER01+Type,132,133,104,104,133);
         b->Actions[MONSTER01_ATTACK1].PlaySpeed = 0.5f;
         b->Actions[MONSTER01_ATTACK2].PlaySpeed = 0.5f;
-		b->BoneHead = 20;//ÀÎ¾î
+		b->BoneHead = 20;//ï¿½Î¾ï¿½
 		break;
 	case 35:
 		LoadWaveFile(SOUND_MONSTER+135,"Data\\Sound\\mValkyrie1.wav"   ,Channel,Enable);
@@ -3796,7 +3796,7 @@ void OpenMonsterModel(int Type)
 		LoadWaveFile ( SOUND_RAKLION_ICEGIANT_DEATH,		"Data\\Sound\\w58w59\\IceGiant_death.wav", 1 );
 		break;
 	case 148:
-		LoadWaveFile( SOUND_MONSTER+34,						"Data\\Sound\\mÇï½ºÆÄÀÌ´õÁ×±â.wav" ,1);
+		LoadWaveFile( SOUND_MONSTER+34,						"Data\\Sound\\mï¿½ï½ºï¿½ï¿½ï¿½Ì´ï¿½ï¿½×±ï¿½.wav" ,1);
 		LoadWaveFile( SOUND_RAKLION_COOLERTIN_ATTACK,		"Data\\Sound\\w58w59\\Coolertin_attack.wav", 1 );
 		LoadWaveFile( SOUND_RAKLION_COOLERTIN_MOVE,			"Data\\Sound\\w58w59\\Coolertin_move.wav", 1 );
 		break;
@@ -4100,7 +4100,7 @@ void OpenSkills()
 	gLoadData.AccessModel(MODEL_MAGIC_CIRCLE1,"Data\\Skill\\","MagicCircle",1);
 	gLoadData.AccessModel(MODEL_ARROW_WING   ,"Data\\Skill\\","ArrowWing",1);
 	gLoadData.AccessModel(MODEL_ARROW_BOMB   ,"Data\\Skill\\","ArrowBomb",1);
-	gLoadData.AccessModel(MODEL_BALL         ,"Data\\Skill\\","Ball",1);//°ø
+	gLoadData.AccessModel(MODEL_BALL         ,"Data\\Skill\\","Ball",1);//ï¿½ï¿½
 	Models[MODEL_BALL].Actions[0].PlaySpeed = 0.5f;
 	gLoadData.AccessModel(MODEL_SKILL_BLAST  ,"Data\\Skill\\","Blast",1);
 	gLoadData.AccessModel(MODEL_SKILL_INFERNO,"Data\\Skill\\","Inferno",1);
@@ -4455,7 +4455,7 @@ void OpenSkills()
 	LoadBitmap("Effect\\knightSt_blue.jpg", BITMAP_KNIGHTST_BLUE, GL_LINEAR, GL_CLAMP_TO_EDGE);
 #endif //PBG_ADD_NEWCHAR_MONK_SKILL
 #ifdef ASG_ADD_KARUTAN_MONSTERS
-	// ÄÜµå¶ó µ¹Á¶°¢
+	// ï¿½Üµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	gLoadData.AccessModel(MODEL_CONDRA_STONE, "Data\\Monster\\", "condra_7_stone" );
 	gLoadData.OpenTexture(MODEL_CONDRA_STONE, "Monster\\");
 	gLoadData.AccessModel(MODEL_CONDRA_STONE1, "Data\\Monster\\", "condra_7_stone_2" );
@@ -4523,8 +4523,17 @@ void OpenImages()
 
 void OpenSounds()
 {
+	extern bool g_bAutoTest;
+	if (g_bAutoTest)
+	{
+		g_ErrorReport.Write("[OpenSounds] auto-test mode, skipping sound loading\n");
+		return;
+	}
+	extern bool g_EnableSound;
+	g_ErrorReport.Write("[OpenSounds] enter\n");
 	bool Enable3DSound = true;
 
+	g_ErrorReport.Write("[OpenSounds] loading SOUND_WIND01 (g_EnableSound=%d)\n", g_EnableSound);
     LoadWaveFile(SOUND_WIND01			,"Data\\Sound\\aWind.wav",1);
     LoadWaveFile(SOUND_RAIN01			,"Data\\Sound\\aRain.wav",1);
     LoadWaveFile(SOUND_DUNGEON01		,"Data\\Sound\\aDungeon.wav",1);
@@ -4532,7 +4541,7 @@ void OpenSounds()
     LoadWaveFile(SOUND_TOWER01		    ,"Data\\Sound\\aTower.wav",1);
     LoadWaveFile(SOUND_WATER01		    ,"Data\\Sound\\aWater.wav",1);
     LoadWaveFile(SOUND_DESERT01		    ,"Data\\Sound\\desert.wav",1);
-    //LoadWaveFile(SOUND_BOSS01		    ,"Data\\Sound\\aÄïµÐ.wav",1);
+    //LoadWaveFile(SOUND_BOSS01		    ,"Data\\Sound\\aï¿½ï¿½ï¿½.wav",1);
     LoadWaveFile(SOUND_HUMAN_WALK_GROUND,"Data\\Sound\\pWalk(Soil).wav",2);
     LoadWaveFile(SOUND_HUMAN_WALK_GRASS	,"Data\\Sound\\pWalk(Grass).wav",2);
     LoadWaveFile(SOUND_HUMAN_WALK_SNOW	,"Data\\Sound\\pWalk(Snow).wav",2);
@@ -4575,7 +4584,7 @@ void OpenSounds()
     LoadWaveFile(SOUND_DROP_GOLD01      ,"Data\\Sound\\pDropMoney.wav",1); 
     LoadWaveFile(SOUND_JEWEL01	      	,"Data\\Sound\\eGem.wav",1); 
     LoadWaveFile(SOUND_GET_ITEM01		,"Data\\Sound\\pGetItem.wav",1); 
-    //LoadWaveFile(SOUND_SHOUT01    		,"Data\\Sound\\p±âÇÕ.wav",1); 
+    //LoadWaveFile(SOUND_SHOUT01    		,"Data\\Sound\\pï¿½ï¿½ï¿½ï¿½.wav",1); 
 
 	//skill
     LoadWaveFile(SOUND_SKILL_DEFENSE    ,"Data\\Sound\\sKnightDefense.wav",1);
@@ -4591,13 +4600,13 @@ void OpenSounds()
     LoadWaveFile(SOUND_HELLFIRE         ,"Data\\Sound\\sHellFire.wav",2,Enable3DSound);
     LoadWaveFile(SOUND_ICE              ,"Data\\Sound\\sIce.wav",2,Enable3DSound);
     LoadWaveFile(SOUND_FLAME            ,"Data\\Sound\\sFlame.wav",2,Enable3DSound);
-    //LoadWaveFile(SOUND_FLASH            ,"Data\\Sound\\mÈ÷µå¶ó°ø°Ý1.wav",2,Enable3DSound);
+    //LoadWaveFile(SOUND_FLASH            ,"Data\\Sound\\mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1.wav",2,Enable3DSound);
     LoadWaveFile(SOUND_FLASH            ,"Data\\Sound\\sAquaFlash.wav",2,Enable3DSound);
 
     LoadWaveFile(SOUND_BREAK01	      	,"Data\\Sound\\eBreak.wav",1,Enable3DSound); 
     LoadWaveFile(SOUND_EXPLOTION01		,"Data\\Sound\\eExplosion.wav",1,Enable3DSound); 
     LoadWaveFile(SOUND_METEORITE01		,"Data\\Sound\\eMeteorite.wav",2,Enable3DSound); 
-    //LoadWaveFile(SOUND_METEORITE02	    ,"Data\\Sound\\eÀ¯¼º.wav",2,Enable3DSound);
+    //LoadWaveFile(SOUND_METEORITE02	    ,"Data\\Sound\\eï¿½ï¿½ï¿½ï¿½.wav",2,Enable3DSound);
     LoadWaveFile(SOUND_THUNDER01		,"Data\\Sound\\eThunder.wav",1,Enable3DSound); 
 
     LoadWaveFile(SOUND_BONE1	     	,"Data\\Sound\\mBone1.wav",2,Enable3DSound);
@@ -4749,6 +4758,7 @@ void OpenSounds()
 	LoadWaveFile(SOUND_RAGESKILL_BUFF_1, "Data\\Sound\\Ragefighter\\Rage_Buff_1.wav");
 	LoadWaveFile(SOUND_RAGESKILL_BUFF_2, "Data\\Sound\\Ragefighter\\Rage_Buff_2.wav");
 #endif //PBG_ADD_NEWCHAR_MONK
+	g_ErrorReport.Write("[OpenSounds] exit\n");
 }
 
 extern int	g_iRenderTextType;
@@ -4873,7 +4883,7 @@ void OpenLogoSceneData()
 	::LoadBitmap("Interface\\server_ex02.jpg", BITMAP_LOG_IN+13, GL_NEAREST, GL_REPEAT);
 	::LoadBitmap("Interface\\cr_mu_lo.tga", BITMAP_LOG_IN+14, GL_LINEAR);
 #ifdef MOVIE_DIRECTSHOW
-	::LoadBitmap("Interface\\movie_b_all.tga", BITMAP_LOG_IN+15);// µ¿¿µ»ó ¹öÆ°.
+	::LoadBitmap("Interface\\movie_b_all.tga", BITMAP_LOG_IN+15);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°.
 #endif	// MOVIE_DIRECTSHOW
 
 }
@@ -4945,9 +4955,13 @@ void ReleaseCharacterSceneData()
 
 void OpenBasicData(HDC hDC)
 {
+	g_ErrorReport.Write("[OpenBasicData] Enter function\n");
+
 	CUIMng& rUIMng = CUIMng::Instance();
+	g_ErrorReport.Write("[OpenBasicData] Got CUIMng instance\n");
 
 	rUIMng.RenderTitleSceneUI(hDC, 0, 11);
+	g_ErrorReport.Write("[OpenBasicData] RenderTitleSceneUI done\n");
 
 	LoadBitmap("Interface\\Cursor.tga"           ,BITMAP_CURSOR  ,GL_LINEAR,GL_CLAMP_TO_EDGE);
 	LoadBitmap("Interface\\CursorPush.tga"       ,BITMAP_CURSOR+1,GL_LINEAR,GL_CLAMP_TO_EDGE);
@@ -5377,32 +5391,48 @@ void OpenBasicData(HDC hDC)
 
 	g_ErrorReport.Write( "> First Load Files OK.\r\n");
 
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayers enter\n");
 	OpenPlayers();
-
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayers done\n");
 
 	rUIMng.RenderTitleSceneUI(hDC, 2, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayerTextures enter\n");
     OpenPlayerTextures();
+	g_ErrorReport.Write("[OpenBasicData] OpenPlayerTextures done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 3, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenItems enter\n");
     OpenItems();
+	g_ErrorReport.Write("[OpenBasicData] OpenItems done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 4, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenItemTextures enter\n");
     OpenItemTextures();
+	g_ErrorReport.Write("[OpenBasicData] OpenItemTextures done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 5, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenSkills enter\n");
     OpenSkills();
+	g_ErrorReport.Write("[OpenBasicData] OpenSkills done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 6, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenImages enter\n");
 	OpenImages();
+	g_ErrorReport.Write("[OpenBasicData] OpenImages done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 7, 11);
 
+	g_ErrorReport.Write("[OpenBasicData] OpenSounds enter\n");
     OpenSounds();
+	g_ErrorReport.Write("[OpenBasicData] OpenSounds done\n");
 	rUIMng.RenderTitleSceneUI(hDC, 8, 11);
+	g_ErrorReport.Write("[OpenBasicData] RenderTitleSceneUI 8 done\n");
 
 	char Text[100];
 
+	g_ErrorReport.Write("[OpenBasicData] g_strSelectedML=[%s]\n", g_strSelectedML.c_str());
 	g_ServerListManager->LoadServerListScript();
+	g_ErrorReport.Write("[OpenBasicData] LoadServerListScript done\n");
 
 	sprintf(Text, "Data\\Local\\%s\\Dialog_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
 	OpenDialogFile(Text);
@@ -5480,3 +5510,5 @@ void ReleaseMainData()
 	ClearItems();
 	ClearCharacters();
 }
+
+

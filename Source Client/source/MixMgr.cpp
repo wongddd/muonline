@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "MixMgr.h"
 #include "./Utilities/Log/ErrorReport.h"
 #include "UIManager.h"
@@ -598,7 +599,7 @@ BOOL CMixRecipes::GetRecipeName(MIX_RECIPE * pRecipe, unicode::t_char * pszNameO
 			}
 			return FALSE;
 		}
-		assert(optionTextlist.size() == 2 && "¿É¼ÇÀº 2°³¿©¾ß ÇÔ");
+		assert(optionTextlist.size() == 2 && "ï¿½É¼ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½");
 		if (iNameLine == 1)
 		{
 			unicode::_strcpy(pszNameOut, optionTextlist[0].c_str());
@@ -1117,8 +1118,7 @@ void CMixRecipeMgr::OpenRecipeFile(const unicode::t_char * szFileName)
 		unicode::t_char Text[256];
     	unicode::_sprintf(Text,"%s - File not exist.",szFileName);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 		exit(0);
 	}
 
@@ -1135,8 +1135,7 @@ void CMixRecipeMgr::OpenRecipeFile(const unicode::t_char * szFileName)
 			unicode::t_char Text[256];
     		unicode::_sprintf(Text,"%s - Version not matched.",szFileName);
 			g_ErrorReport.Write( Text);
-			MessageBox(g_hWnd,Text,NULL,MB_OK);
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError(Text);
 			fclose(fp);
 			exit(0);
 		}
@@ -1153,7 +1152,7 @@ void CMixRecipeMgr::OpenRecipeFile(const unicode::t_char * szFileName)
 
 int CMixRecipeMgr::GetMixInventoryType()
 {
-	assert(m_iMixType >= MIXTYPE_GOBLIN_NORMAL && m_iMixType < MAX_MIX_TYPES && "Á¤ÀÇµÇÁö ¾ÊÀº Á¶ÇÕÃ¢");
+	assert(m_iMixType >= MIXTYPE_GOBLIN_NORMAL && m_iMixType < MAX_MIX_TYPES && "ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢");
 	return m_iMixType;
 }
 
@@ -1232,3 +1231,5 @@ int CMixRecipeMgr::GetSeedSphereID(int iOrder)
 	}
 	return SOCKET_EMPTY;
 }
+
+

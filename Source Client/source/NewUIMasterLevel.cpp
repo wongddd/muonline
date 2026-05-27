@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "NewUIMasterLevel.h"
 #include "NewUISystem.h"
 #include "NewUICommonMessageBox.h"
@@ -839,8 +840,7 @@ void SEASON3B::CNewUIMasterLevel::OpenMasterLevel ( const char* filename )
 			char Text[256];
     		sprintf(Text,"%s - File corrupted.",filename);
 			g_ErrorReport.Write( Text);
-			MessageBox(g_hWnd,Text,NULL,MB_OK);
-			SendMessage(g_hWnd,WM_DESTROY,0,0);
+			FatalError(Text);
 		}
 		else
 		{
@@ -868,8 +868,7 @@ void SEASON3B::CNewUIMasterLevel::OpenMasterLevel ( const char* filename )
 		char Text[256];
     	sprintf(Text,"%s - File not exist.",filename);
 		g_ErrorReport.Write( Text);
-		MessageBox(g_hWnd,Text,NULL,MB_OK);
-		SendMessage(g_hWnd,WM_DESTROY,0,0);
+		FatalError(Text);
 	}
 }
 
@@ -1259,3 +1258,5 @@ bool SEASON3B::CNewUIMasterLevel::Check_Btn()
 	}
 	return true;
 }
+
+

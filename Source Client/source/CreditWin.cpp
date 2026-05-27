@@ -3,6 +3,7 @@
 //*****************************************************************************
 
 #include "stdafx.h"
+#include "DebugSkip.h"
 #include "CreditWin.h"
 #include "Input.h"
 #include "UIMng.h"
@@ -323,8 +324,7 @@ void CCreditWin::LoadText()
 		char szMessage[256];
 		::sprintf(szMessage, "%s file not found.\r\n", CRW_DATA_FILE);
 		g_ErrorReport.Write(szMessage);
-		::MessageBox(g_hWnd, szMessage, NULL, MB_OK);
-		::PostMessage(g_hWnd, WM_DESTROY, 0, 0);
+		FatalError(szMessage);
 		return;
 	}
 
@@ -423,3 +423,5 @@ void CCreditWin::AnimationText(int nClass, double dDeltaTick)
 		break;
 	}
 }
+
+
